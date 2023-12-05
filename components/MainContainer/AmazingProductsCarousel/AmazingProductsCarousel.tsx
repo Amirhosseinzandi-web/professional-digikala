@@ -38,8 +38,26 @@ const AmazingProductsCarousel = () => {
 
                 <div className="amzaing-products-carousel-items flex flex-col items-center justify-around rounded-r-lg p-1 lttr bg-white mx-1">
                     <figure className="flex justify-center items-center">
-                        <Image className={`loading-logo ${DataList?.[0] ? "hidden" : "block"}`} priority={true} src={LoadingPic} alt="loading" width={50} height={50} />
-                        <Image className={DataList?.[0] ? "block" : "hidden"} priority={false} src={DataList?.[0]?.image} width={72} height={77} alt="کفش" />
+                        {
+                            DataList?.[0]?.image ? (
+                                <Image
+                                    priority={false}
+                                    src={DataList[0].image}
+                                    width={72}
+                                    height={77}
+                                    alt="کیف"
+                                />
+                            ) : (
+                                <Image
+                                    className="loading-logo"
+                                    priority={true}
+                                    src={LoadingPic}
+                                    alt="loading"
+                                    width={50}
+                                    height={50}
+                                />
+                            )
+                        }
                     </figure>
                     <p className={`text-sm desktop-menu-color font-medium ${DataList?.[0] ? "block" : "hidden"}`}>title : {DataList?.[0]?.category}</p>
                     <p className={`text-sm desktop-menu-color font-medium ${DataList?.[0] ? "block" : "hidden"}`}>price : {DataList?.[0]?.price}$</p>
@@ -47,8 +65,26 @@ const AmazingProductsCarousel = () => {
 
                 <div className="amzaing-products-carousel-items flex flex-col items-center justify-around p-1 lttr bg-white mx-1">
                     <figure className="flex justify-center items-center">
-                        <Image className={`loading-logo ${DataList?.[1] ? "hidden" : "block"}`} priority={true} src={LoadingPic} alt="loading" width={50} height={50} />
-                        <Image className={DataList?.[1] ? "block" : "hidden"} priority={true} src={DataList?.[1]?.image} width={72} height={77} alt="شگفت انگیز" />
+                        {
+                            DataList?.[1]?.image ? (
+                                <Image
+                                    priority={false}
+                                    src={DataList[1].image}
+                                    width={72}
+                                    height={77}
+                                    alt="لباس1"
+                                />
+                            ) : (
+                                <Image
+                                    className="loading-logo"
+                                    priority={true}
+                                    src={LoadingPic}
+                                    alt="loading"
+                                    width={50}
+                                    height={50}
+                                />
+                            )
+                        }
                     </figure>
                     <p className={`text-sm desktop-menu-color font-medium ${DataList?.[1] ? "block" : "hidden"}`}>title : {DataList?.[1]?.category}</p>
                     <p className={`text-sm desktop-menu-color font-medium ${DataList?.[1] ? "block" : "hidden"}`}>price : {DataList?.[1]?.price}$</p>
@@ -56,8 +92,26 @@ const AmazingProductsCarousel = () => {
 
                 <div className="amzaing-products-carousel-items hidden sm:flex flex-col items-center justify-around p-1 lttr bg-white mx-1">
                     <figure className="flex justify-center items-center">
-                        <Image className={`loading-logo ${DataList?.[2] ? "hidden" : "block"}`} priority={true} src={LoadingPic} alt="loading" width={50} height={50} />
-                        <Image className={DataList?.[2] ? "block" : "hidden"} priority={true} src={DataList?.[2]?.image} width={72} height={77} alt="شگفت انگیز" />
+                    {
+                            DataList?.[2]?.image ? (
+                                <Image
+                                    priority={false}
+                                    src={DataList[2].image}
+                                    width={72}
+                                    height={77}
+                                    alt="لباس2"
+                                />
+                            ) : (
+                                <Image
+                                    className="loading-logo"
+                                    priority={true}
+                                    src={LoadingPic}
+                                    alt="loading"
+                                    width={50}
+                                    height={50}
+                                />
+                            )
+                        }
                     </figure>
                     <p className={`text-sm desktop-menu-color font-medium ${DataList?.[2] ? "block" : "hidden"}`}>title : {DataList?.[2]?.category}</p>
                     <p className={`text-sm desktop-menu-color font-medium ${DataList?.[2] ? "block" : "hidden"}`}>price : {DataList?.[2]?.price}$</p>
@@ -65,8 +119,26 @@ const AmazingProductsCarousel = () => {
 
                 <div className="amzaing-products-carousel-items hidden md:flex flex-col items-center justify-around p-1 lttr bg-white mx-1 ">
                     <figure className="flex justify-center items-center">
-                        <Image className={`loading-logo ${DataList?.[3] ? "hidden" : "block"}`} priority={true} src={LoadingPic} alt="loading" width={50} height={50} />
-                        <Image className={DataList?.[3] ? "block" : "hidden"} priority={true} src={DataList?.[3]?.image} width={72} height={77} alt="شگفت انگیز" />
+                    {
+                            DataList?.[3]?.image ? (
+                                <Image
+                                    priority={false}
+                                    src={DataList[3].image}
+                                    width={72}
+                                    height={77}
+                                    alt="لباس3"
+                                />
+                            ) : (
+                                <Image
+                                    className="loading-logo"
+                                    priority={true}
+                                    src={LoadingPic}
+                                    alt="loading"
+                                    width={50}
+                                    height={50}
+                                />
+                            )
+                        }
                     </figure>
                     <p className={`text-sm desktop-menu-color font-medium ${DataList?.[3] ? "block" : "hidden"}`}>title : {DataList?.[3]?.category}</p>
                     <p className={`text-sm desktop-menu-color font-medium ${DataList?.[3] ? "block" : "hidden"}`}>price : {DataList?.[3]?.price}$</p>
@@ -74,8 +146,26 @@ const AmazingProductsCarousel = () => {
 
                 <div className="amzaing-products-carousel-items hidden lg:flex flex-col items-center justify-around p-1 lttr bg-white mx-1">
                     <figure className="flex justify-center items-center">
-                        <Image className={`loading-logo ${DataList?.[4] ? "hidden" : "block"}`} priority={true} src={LoadingPic} alt="loading" width={50} height={50} />
-                        <Image className={DataList?.[4] ? "block" : "hidden"} priority={true} src={DataList?.[4]?.image} width={72} height={77} alt="شگفت انگیز" />
+                    {
+                            DataList?.[4]?.image ? (
+                                <Image
+                                    priority={false}
+                                    src={DataList[4].image}
+                                    width={72}
+                                    height={77}
+                                    alt="جواهر"
+                                />
+                            ) : (
+                                <Image
+                                    className="loading-logo"
+                                    priority={true}
+                                    src={LoadingPic}
+                                    alt="loading"
+                                    width={50}
+                                    height={50}
+                                />
+                            )
+                        }
                     </figure>
                     <p className={`text-sm desktop-menu-color font-medium ${DataList?.[4] ? "block" : "hidden"}`}>title : {DataList?.[4]?.category}</p>
                     <p className={`text-sm desktop-menu-color font-medium ${DataList?.[4] ? "block" : "hidden"}`}>price : {DataList?.[4]?.price}$</p>
