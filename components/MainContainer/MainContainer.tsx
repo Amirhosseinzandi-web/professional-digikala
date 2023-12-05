@@ -1,3 +1,4 @@
+import AmazingProductsCarousel from "./AmazingProductsCarousel/AmazingProductsCarousel";
 import ExpressServicesHub from "./ExpressServicesHub/ExpressServicesHub";
 import Slider from "./Slider/Slider";
 
@@ -8,6 +9,7 @@ const MainContainer = () => {
         <main>
             <Slider/>
             <ExpressServicesHub/>
+            <AmazingProductsCarousel/>
         </main>
     );
 }

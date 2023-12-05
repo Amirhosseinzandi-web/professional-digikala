@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images : {
-        domains: ['dkstatics-public.digikala.com']
+    images: {
+        domains: ['www.digikala.com', 'dkstatics-public.digikala.com' , 'fakestoreapi.com']
     }
 }
 

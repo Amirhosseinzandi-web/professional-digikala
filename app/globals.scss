@@ -10,12 +10,16 @@
     --lightGrayText : #81858b;
     --lightBlue : #19bfd3;
     --desktopMenuColor : #62666d;
+    --lightRed : #ef4056
 }
 
 @font-face {
     font-family: 'Vazirmatn', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
     font-display: swap
+}
+.lttr{
+    direction: ltr;
 }
 
 .light-gray-text{
