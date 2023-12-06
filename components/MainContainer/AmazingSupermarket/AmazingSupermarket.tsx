@@ -34,22 +34,22 @@ const AmazingSupermarket = () => {
                             <div className="flex relative w-[70%] flex-wrap h-[65px] overflow-hidden lg:h-[74px] lg:w-[80%] lg:justify-evenly">
 
                                 {
-                                    DataList.length > 0 ? (DataList?.slice(0, 7)?.map(el => (
-                                        <section className="w-[65px] h-[65px] rounded-full bg-white relative lg:w-[74px] lg:h-[74px] mr-1">
+                                    DataList.length > 0 ? (DataList?.slice(0, 7)?.map((el, ind) => (
+                                        <section key={ind} className="w-[65px] h-[65px] rounded-full bg-white relative lg:w-[74px] lg:h-[74px] mr-1">
                                             <figure className="w-full h-full flex justify-center items-center">
                                                 <Image width={30} height={30} alt="photo" src={el.image} />
                                                 <figcaption className="absolute bottom-0 right-0 text-white bg-red-600 rounded-full px-2 text-xs">{el?.rating?.rate}%</figcaption>
                                             </figure>
                                         </section>
                                     ))) :
-                                        (<Image
+                                        <Image
                                             className="loading-logo"
                                             priority={true}
                                             src={LoadingPic}
                                             alt="loading"
                                             width={50}
                                             height={50}
-                                        />)
+                                        />
                                 }
 
                             </div>
