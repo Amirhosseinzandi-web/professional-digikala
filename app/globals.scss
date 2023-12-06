@@ -12,6 +12,7 @@
     --desktopMenuColor : #62666d;
     --lightRed : #ef4056;
     --green : #39ae00;
+    --bluePurpleColor: #987eff85;
 }
 
 @font-face {
@@ -51,6 +52,10 @@
 }
 .desktop-menu-color {
     color: var(--desktopMenuColor);
+}
+.border-bottom{
+    border-bottom: 1px solid var(--bluePurpleColor);
+    padding: 10px 0;
 }
 
 @import "../styles/Master.scss";

@@ -33,15 +33,19 @@ const DesktopMenuTop: React.FC = () => {
         window.addEventListener("click", (e) => {
             e.stopPropagation()
             if (flag) {
-
                 setFlag(false)
             }
         })
+
+        if(flag){
+            document.documentElement.style.overflowY = "hidden"
+        }else{
+            document.documentElement.style.overflowY = "auto"
+        }
+
         setTimeout(() => {
-            if (flag) {
-                document.getElementById("inp")?.focus()
-            }
-        })
+            document.getElementById("inp")?.focus()
+        }, 5)
     }, [flag])
 
 
@@ -72,11 +76,11 @@ const DesktopMenuTop: React.FC = () => {
                     <div onClick={searchModalHandlerShow} className="relative mr-4 w-full menu-desktop-searchbar cursor-pointer flex items-center">
                         <i className="bi bi-search light-gray-text text-base absolute inline-flex bottom-[8px] right-[10px]"></i>
                         <span className="w-full py-2 pr-14 light-gray-text">جستجو</span>
-                        <div style={{ boxShadow: "10px 10px 45px black" }} className={`search-modal p-3 rounded-md ${flag ? "search-modal-show" : ""}`}>
+                        <div style={{ boxShadow: "0px 0px 45px black" }} className={`search-modal  rounded-md ${flag ? "search-modal-show" : ""}`}>
                             <section>
                                 <div>
                                     <div className="relative">
-                                        <input value={inputVal} onChange={inputValHandler} id="inp" className="w-full outline-none border border-slate-400 py-2 pr-14" placeholder="جستجو" type="text" />
+                                        <input value={inputVal} maxLength={30} onChange={inputValHandler} id="inp" className="w-full outline-none border border-slate-400 py-2 pr-14" placeholder="جستجو" type="text" />
                                         <i onClick={searchModalHandlerClose} className="bi bi-search text-black font-bold text-base absolute inline-flex bottom-[8px] right-[10px]"></i>
                                     </div>
                                 </div>
@@ -85,7 +89,7 @@ const DesktopMenuTop: React.FC = () => {
                                 <div className="p-10 lttr">
                                     <p className={`${(filteredItems.length) < 1 ? "block" : "hidden"} ${DataList.length < 1 ? "hidden" : "block"}`}>nothing to show...</p>
                                     <p className={DataList.length < 1 ? "block" : "hidden"}>an error occured</p>
-                                    <section className="h-[500px] p-2 overflow-y-auto">
+                                    <section className="h-[500px] py-5 px-3 overflow-y-auto">
                                         <div className="flex flex-wrap justify-around gap-3">
                                             {
                                                 filteredItems?.map((item: ItemsType, index) => (
