@@ -25,23 +25,26 @@ body {
                             background-color: var(--lightGrayBg);
                             font-size: 14px;
                             border-radius: 7px;
-                            >.search-modal{
+
+                            >.search-modal {
                                 position: absolute;
                                 top: 0;
                                 left: 0;
-                                border: 1px solid brown;
                                 width: 100%;
-                                min-height: 500px;
+                                // height: 500px;
                                 background-color: white;
                                 transition: 0.4s ease;
                                 z-index: 10;
                                 opacity: 0;
                                 visibility: hidden;
-                                >section{
-                                    >div{
-                                        >div{
-                                            >input{
-                                                &::placeholder{
+                                overflow: hidden;
+                                // box-shadow: 10px 10px 45px;
+
+                                >section {
+                                    >div {
+                                        >div {
+                                            >input {
+                                                &::placeholder {
                                                     color: var(--lightGrayText);
                                                     font-size: 14px;
                                                 }
@@ -56,7 +59,7 @@ body {
             }
         }
 
-        .search-modal-show{
+        .search-modal-show {
             opacity: 1 !important;
             visibility: visible !important;
         }

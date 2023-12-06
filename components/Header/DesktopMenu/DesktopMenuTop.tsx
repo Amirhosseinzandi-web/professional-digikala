@@ -25,7 +25,7 @@ const DesktopMenuTop: React.FC = () => {
     }
 
     const inputValHandler = (e: React.ChangeEvent) => {
-        setInputVal((e.target as HTMLInputElement).value)
+        setInputVal((e.target as HTMLInputElement).value);
     }
 
 
@@ -35,6 +35,11 @@ const DesktopMenuTop: React.FC = () => {
             if (flag) {
 
                 setFlag(false)
+            }
+        })
+        setTimeout(() => {
+            if (flag) {
+                document.getElementById("inp")?.focus()
             }
         })
     }, [flag])
@@ -50,7 +55,7 @@ const DesktopMenuTop: React.FC = () => {
                 setFilteredItems(filteredList)
             }
         }
-        // console.log(filteredItems);
+
 
     }, [inputVal])
 
@@ -67,30 +72,36 @@ const DesktopMenuTop: React.FC = () => {
                     <div onClick={searchModalHandlerShow} className="relative mr-4 w-full menu-desktop-searchbar cursor-pointer flex items-center">
                         <i className="bi bi-search light-gray-text text-base absolute inline-flex bottom-[8px] right-[10px]"></i>
                         <span className="w-full py-2 pr-14 light-gray-text">جستجو</span>
-                        <div className={`search-modal ${flag ? "search-modal-show" : ""}`}>
+                        <div style={{ boxShadow: "10px 10px 45px black" }} className={`search-modal p-3 rounded-md ${flag ? "search-modal-show" : ""}`}>
                             <section>
                                 <div>
-                                    <div className="border border-red-400 relative">
-                                        <input value={inputVal} onChange={inputValHandler} className="border border-blue-500 w-full outline-none py-2 pr-14" placeholder="جستجو" type="text" />
-                                        <i className="bi bi-search text-black font-bold text-base absolute inline-flex bottom-[8px] right-[10px]"></i>
+                                    <div className="relative">
+                                        <input value={inputVal} onChange={inputValHandler} id="inp" className="w-full outline-none border border-slate-400 py-2 pr-14" placeholder="جستجو" type="text" />
+                                        <i onClick={searchModalHandlerClose} className="bi bi-search text-black font-bold text-base absolute inline-flex bottom-[8px] right-[10px]"></i>
                                     </div>
                                 </div>
 
-                                <button onClick={searchModalHandlerClose}>close</button>
 
-                                <div>
-                                    <p className={`${inputVal.length > 0 && (filteredItems.length) < 1 ? "block" : "hidden"} ${DataList.length < 1 ? "hidden" : "block"}`}>not found</p>
+                                <div className="p-10 lttr">
+                                    <p className={`${(filteredItems.length) < 1 ? "block" : "hidden"} ${DataList.length < 1 ? "hidden" : "block"}`}>nothing to show...</p>
                                     <p className={DataList.length < 1 ? "block" : "hidden"}>an error occured</p>
-                                    <ul>
-                                        {
-                                            filteredItems?.map((item: ItemsType, index) => (
-                                                <li>
-                                                    <p>{item.title}</p>
-                                                    <Image src={item.image} width={100} height={100} alt="aks" />
-                                                </li>
-                                            ))
-                                        }
-                                    </ul>
+                                    <section className="h-[500px] p-2 overflow-y-auto">
+                                        <div className="flex flex-wrap justify-around gap-3">
+                                            {
+                                                filteredItems?.map((item: ItemsType, index) => (
+                                                    <div key={index} className="w-[150px] border border-black rounded-lg flex flex-col items-center justify-evenly">
+                                                        <div>
+                                                            <figure>
+                                                                <Image src={item.image} width={80} height={80} alt="aks" />
+                                                            </figure>
+                                                        </div>
+                                                        <p className="overflow-hidden whitespace-nowrap text-ellipsis my-4 w-[90%]">title : {item.title}</p>
+                                                        <p className="overflow-hidden whitespace-nowrap text-ellipsis w-[90%]">price : {item.price} $</p>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                    </section>
                                 </div>
                             </section>
                         </div>
