@@ -39,7 +39,7 @@ const CategorizedProducts = () => {
                 </section>
 
 
-                {/* ************************************************************ */}
+              
 
                 <section className="min-h-[412px]">
                     <p className=" font-medium my-6">دسته بندی محصولات بر اساس jewelery</p>
@@ -68,7 +68,7 @@ const CategorizedProducts = () => {
                     </div>
                 </section>
 
-                {/* ************************************************************ */}
+              
 
                 <section className="min-h-[412px]">
                     <p className=" font-medium my-6">دسته بندی محصولات بر اساس electronics</p>
@@ -97,7 +97,7 @@ const CategorizedProducts = () => {
                     </div>
                 </section>
 
-                {/* ************************************************************ */}
+               
             </div>
         </section>
     );

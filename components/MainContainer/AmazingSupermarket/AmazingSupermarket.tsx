@@ -64,7 +64,6 @@ const AmazingSupermarket = () => {
                     </div>
 
                 </div>
-                {/* *************** */}
                 <div className="amazing-supermarket-bottom mt-5">
                     <div className="flex flex-wrap gap-4 justify-between">
                         <section className="w-[40%] lg:w-[20%] 2xl:w-[15%]">

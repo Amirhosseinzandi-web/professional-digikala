@@ -66,7 +66,6 @@ const MobileMenu: React.FC = () => {
                         <i onClick={() => setSearchToggleBox(false)} className="bi bi-arrow-right cursor-pointer"></i>
                         <input autoFocus maxLength={50} value={inputVal} onChange={inputValHandler} className="searchBoxInp m-2 border w-[94%] pr-[40px]" type="text" placeholder="جستجو..." />
                     </div>
-                    {/* **************************************************************** */}
 
                     <section className="mt-10 mobile-menu-search-items lttr h-[700px] overflow-y-auto">
                         <div className="flex flex-wrap justify-around gap-4">
@@ -88,7 +87,6 @@ const MobileMenu: React.FC = () => {
                     </section>
 
 
-                    {/* ************************************************************************ */}
                 </div>
             </section>
             <div className={`bg-shadow ${searchToggleBox ? "block" : "hidden"}`}></div>
