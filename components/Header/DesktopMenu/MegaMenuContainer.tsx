@@ -40,14 +40,11 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
 
     useEffect(() => {
         let _nav = document.querySelector("nav")!
-        let _temp = document.querySelector("nav>div>div")!
         if (showMegaMenu) {
             document.documentElement.style.overflowY = "hidden";
             document.querySelector("main .shadow")?.classList.add("shadow-active")
             if (_nav) {
                 _nav.style.padding = "0px 22px";
-                // _nav.style.transition = "unset";
-                // (_temp as HTMLElement).style.transition = "unset";
             }
         } else {
             document.documentElement.style.overflowY = "auto";
