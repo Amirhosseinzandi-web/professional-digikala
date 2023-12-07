@@ -57,5 +57,11 @@
     border-bottom: 1px solid var(--bluePurpleColor);
     padding: 10px 0;
 }
+.border-bottom-gray{
+    border-bottom : 1px solid rgb(209 213 219);
+}
+.border-left-gray{
+    border-left : 1px solid rgb(209 213 219);
+}
 
 @import "../styles/Master.scss";

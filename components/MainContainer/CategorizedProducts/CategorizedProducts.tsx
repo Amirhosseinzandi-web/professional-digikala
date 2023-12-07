@@ -25,10 +25,10 @@ const CategorizedProducts = () => {
                                                 </figure>
                                                 <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.title}</p>
                                                 <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.price} $</p>
-                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.description} $</p>
-                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.category} $</p>
-                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.rating.rate} $</p>
-                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.rating.count} $</p>
+                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.description}</p>
+                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.category}</p>
+                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.rating.rate}</p>
+                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.rating.count}</p>
                                             </div>
                                         )
                                     }
@@ -55,10 +55,10 @@ const CategorizedProducts = () => {
                                                 </figure>
                                                 <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.title}</p>
                                                 <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.price} $</p>
-                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.description} $</p>
-                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.category} $</p>
-                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.rating.rate} $</p>
-                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.rating.count} $</p>
+                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.description}</p>
+                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.category}</p>
+                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.rating.rate}</p>
+                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.rating.count}</p>
                                             </div>
                                         )
                                     }
@@ -84,10 +84,10 @@ const CategorizedProducts = () => {
                                                 </figure>
                                                 <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.title}</p>
                                                 <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.price} $</p>
-                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.description} $</p>
-                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.category} $</p>
-                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.rating.rate} $</p>
-                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.rating.count} $</p>
+                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.description}</p>
+                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.category}</p>
+                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.rating.rate}</p>
+                                                <p className="w-[90%] overflow-hidden whitespace-nowrap text-ellipsis text-sm desktop-menu-color font-medium border-bottom">{el.rating.count}</p>
                                             </div>
                                         )
                                     }
