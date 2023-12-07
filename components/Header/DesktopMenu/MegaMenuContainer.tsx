@@ -39,19 +39,11 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
 
 
     useEffect(() => {
-        let _nav = document.querySelector("nav")!
+
         if (showMegaMenu) {
-            document.documentElement.style.overflowY = "hidden";
             document.querySelector("main .shadow")?.classList.add("shadow-active")
-            if (_nav) {
-                _nav.style.padding = "0px 22px";
-            }
         } else {
-            document.documentElement.style.overflowY = "auto";
             document.querySelector("main .shadow")?.classList.remove("shadow-active")
-            if (_nav) {
-                _nav.style.padding = "0px 12px"
-            }
         }
     }, [showMegaMenu])
 
@@ -110,7 +102,7 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
                             <i className="bi bi-car-front-fill inline-flex"></i>
                             <p className="mr-2">خودرو و موتورسیکلت</p>
                         </div>
-                        
+
 
                     </section>
                 </div>
