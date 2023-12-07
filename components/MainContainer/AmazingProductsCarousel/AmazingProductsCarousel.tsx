@@ -9,12 +9,13 @@ import LoadingPic from "../../../public/loading.gif"
 
 
 const AmazingProductsCarousel = () => {
-    const { generateItems, DataList } = useDataStore(state => state)
+    const { generateItems, DataList, setError } = useDataStore(state => state)
 
 
     useEffect(() => {
         axios.get("https://fakestoreapi.com/products/")
-            .then(res => generateItems(res.data)
+            .then(res => generateItems(res.data))
+            .catch(err =>setError(true)
             )
     }, [])
 
@@ -92,7 +93,7 @@ const AmazingProductsCarousel = () => {
 
                 <div className="amzaing-products-carousel-items hidden sm:flex flex-col items-center justify-around p-1 lttr bg-white mx-1">
                     <figure className="flex justify-center items-center">
-                    {
+                        {
                             DataList?.[2]?.image ? (
                                 <Image
                                     priority={false}
@@ -119,7 +120,7 @@ const AmazingProductsCarousel = () => {
 
                 <div className="amzaing-products-carousel-items hidden md:flex flex-col items-center justify-around p-1 lttr bg-white mx-1 ">
                     <figure className="flex justify-center items-center">
-                    {
+                        {
                             DataList?.[3]?.image ? (
                                 <Image
                                     priority={false}
@@ -146,7 +147,7 @@ const AmazingProductsCarousel = () => {
 
                 <div className="amzaing-products-carousel-items hidden lg:flex flex-col items-center justify-around p-1 lttr bg-white mx-1">
                     <figure className="flex justify-center items-center">
-                    {
+                        {
                             DataList?.[4]?.image ? (
                                 <Image
                                     priority={false}

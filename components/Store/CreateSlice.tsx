@@ -4,7 +4,8 @@ import { DataListArrayType, DataStoreType } from "./CreateSlice.types";
 
 
 const initialState : DataListArrayType = {
-    DataList : [] 
+    DataList : [] ,
+    error : false
 }
 
 
@@ -15,6 +16,14 @@ const useDataStore = create<DataStoreType>((set)=>({
             return {
                 ...state ,
                 DataList : newRecords
+            }
+        })
+    },
+    setError : (newRecord) =>{
+        set(state=>{
+            return {
+                ...state , 
+                error : newRecord
             }
         })
     }

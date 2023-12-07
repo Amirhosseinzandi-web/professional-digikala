@@ -122,7 +122,6 @@ const DesktopMenuTop: React.FC = () => {
                 </div>
             </div>
 
-            <nav></nav>
         </section>
     );
 }

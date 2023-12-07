@@ -10,6 +10,7 @@ import Slider from "./Slider/Slider";
 const MainContainer = () => {
     return (
         <main>
+            <div className="shadow"></div>
             <Slider/>
             <ExpressServicesHub/>
             <AmazingProductsCarousel/>

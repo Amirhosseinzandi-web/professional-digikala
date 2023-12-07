@@ -16,10 +16,13 @@ export type ItemsType = {
 
 export type DataListArrayType = {
     DataList : ItemsType[]
+    error : boolean
 }
 
 
 export type DataStoreType = {
     DataList: ItemsType[]
+    error : boolean
     generateItems: (newRecords: ItemsType[]) => void
+    setError : (newRecord:boolean) =>void
 }

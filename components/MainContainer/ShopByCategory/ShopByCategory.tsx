@@ -9,7 +9,7 @@ import Image from "next/image";
 const ShopByCategory = () => {
     return (
         <section className="shop-by-category-container">
-            <div className="container mx-auto p-3">
+            <div className="container mx-auto">
                 <div>
                     <h2 className="text-xl font-medium text-center">
                         خرید بر اساس دسته بندی
@@ -97,14 +97,14 @@ const ShopByCategory = () => {
 
                 {/* ********************************************************************** */}
 
-                <div className="py-5">
+                <div>
                     <div>
                         <h2 className="text-xl font-medium text-center">
                             پیشنهاد دیجی‌کالا
                         </h2>
                     </div>
 
-                    <div className="flex flex-wrap mt-3 justify-around gap-5 border border-gray-300 rounded-lg">
+                    <div className="flex flex-wrap mt-3 justify-around gap-5 border border-gray-300 rounded-lg py-5">
 
                         <div className="w-[30%] lg:w-[15%]">
                             <figure className="flex flex-col items-center">
@@ -215,14 +215,14 @@ const ShopByCategory = () => {
 
                 {/* ****************************************************************************** */}
 
-                <div className="py-5">
-                    <div>
+                <div>
+                    <div className="my-10">
                         <h2 className="text-xl font-medium text-center">
                             محبوب ترین برندها
                         </h2>
                     </div>
 
-                    <div className="flex flex-wrap mt-3 justify-around gap-5 border border-gray-300 rounded-lg">
+                    <div className="flex flex-wrap justify-around gap-5 border border-gray-300 rounded-lg py-5">
 
                         <div className="w-[30%] lg:w-[10%] flex justify-center items-center">
                             <figure className="flex flex-col items-center">
