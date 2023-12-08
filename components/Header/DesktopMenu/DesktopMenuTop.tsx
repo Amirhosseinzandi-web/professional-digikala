@@ -3,25 +3,24 @@
 import useDataStore from "@/components/Store/CreateSlice";
 import { ItemsType } from "@/components/Store/CreateSlice.types";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 
 const DesktopMenuTop: React.FC = () => {
 
-    const { DataList , error} = useDataStore(state => state)
-    const [flag, setFlag] = useState(false)
+    const { DataList, error, setModalSearch, openSearchModalDesktop } = useDataStore(state => state)
     const [inputVal, setInputVal] = useState("")
     const [filteredItems, setFilteredItems] = useState([] as ItemsType[])
 
 
     const searchModalHandlerShow = (e: React.MouseEvent) => {
         e.stopPropagation()
-        setFlag(true)
+        setModalSearch(true)
     }
 
     const searchModalHandlerClose = (e: React.MouseEvent) => {
         e.stopPropagation()
-        setFlag(false)
+        setModalSearch(false)
     }
 
     const inputValHandler = (e: React.ChangeEvent) => {
@@ -32,21 +31,21 @@ const DesktopMenuTop: React.FC = () => {
     useEffect(() => {
         window.addEventListener("click", (e) => {
             e.stopPropagation()
-            if (flag) {
-                setFlag(false)
+            if (openSearchModalDesktop) {
+                setModalSearch(false)
             }
         })
 
-        if(flag){
-            document.documentElement.style.overflowY = "hidden"
-        }else{
-            document.documentElement.style.overflowY = "auto"
+        if (openSearchModalDesktop) {
+            // document.documentElement.style.overflowY = "hidden"
+        } else {
+            // document.documentElement.style.overflowY = "auto"
         }
 
         setTimeout(() => {
             document.getElementById("inp")?.focus()
         }, 5)
-    }, [flag])
+    }, [openSearchModalDesktop])
 
 
 
@@ -76,7 +75,7 @@ const DesktopMenuTop: React.FC = () => {
                     <div onClick={searchModalHandlerShow} className="relative mr-4 w-full menu-desktop-searchbar cursor-pointer flex items-center">
                         <i className="bi bi-search light-gray-text text-base absolute inline-flex bottom-[8px] right-[10px]"></i>
                         <span className="w-full py-2 pr-14 light-gray-text">جستجو</span>
-                        <div style={{ boxShadow: "0px 0px 45px black" }} className={`search-modal  rounded-md ${flag ? "search-modal-show" : ""}`}>
+                        <div style={{ boxShadow: "0px 0px 45px black" }} className={`search-modal  rounded-md ${openSearchModalDesktop ? "search-modal-show" : ""}`}>
                             <section>
                                 <div>
                                     <div className="relative">
@@ -126,4 +125,4 @@ const DesktopMenuTop: React.FC = () => {
     );
 }
 
-export default DesktopMenuTop;
+export default memo(DesktopMenuTop);

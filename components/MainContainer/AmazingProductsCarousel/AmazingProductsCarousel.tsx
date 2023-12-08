@@ -2,7 +2,7 @@
 
 import useDataStore from "@/components/Store/CreateSlice"
 import axios from "axios"
-import { useEffect } from "react"
+import { memo, useEffect } from "react"
 import Image from "next/image"
 import LoadingPic from "../../../public/loading.gif"
 
@@ -178,4 +178,4 @@ const AmazingProductsCarousel = () => {
     );
 }
 
-export default AmazingProductsCarousel;
+export default memo(AmazingProductsCarousel);

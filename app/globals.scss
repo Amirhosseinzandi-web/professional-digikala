@@ -90,12 +90,14 @@
 }
 
 .show-menu {
-    display: block !important;
+    display: flex !important;
 }
 
 .active-menu {
     color: var(--lightRed)
 }
-
+.reduce-height{
+    height: calc(111px - 42px) !important;
+}
 
 @import "../styles/Master.scss";

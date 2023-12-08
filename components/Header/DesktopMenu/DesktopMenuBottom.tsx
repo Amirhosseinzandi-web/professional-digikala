@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react";
+import { memo, useEffect, useState } from "react";
 import MegaMenuContainer from "./MegaMenuContainer";
+import useDataStore from "@/components/Store/CreateSlice";
 
 
 
@@ -9,6 +10,14 @@ import MegaMenuContainer from "./MegaMenuContainer";
 
 const DesktopMenuBottom: React.FC = () => {
     const [showMegaMenu, setShowMegaMenu] = useState(false)
+    const { setModalSearch, openSearchModalDesktop } = useDataStore(state => state)
+
+    const MenuHandler = (e:React.MouseEvent) => {
+        e.stopPropagation()
+        setShowMegaMenu(true)
+    }
+
+    
 
     return (
         <>
@@ -17,7 +26,7 @@ const DesktopMenuBottom: React.FC = () => {
                     <div className="flex w-full justify-between">
                         <div className="flex">
 
-                            <div onMouseEnter={() => setShowMegaMenu(true)} onMouseLeave={() => setShowMegaMenu(false)} className="flex items-center cursor-pointer py-2 nav-items" id="1">
+                            <div onMouseEnter={MenuHandler} onMouseLeave={() => setShowMegaMenu(false)} className="flex items-center cursor-pointer py-2 nav-items" id="1">
                                 <i className="bi bi-justify hamburger-menu inline-flex text-lg"></i>
                                 <p className="text-sm font-bold mr-1">دسته بندی کالا ها</p>
                                 <span className="mr-5 light-gray-text opacity-40">|</span>
@@ -83,4 +92,4 @@ const DesktopMenuBottom: React.FC = () => {
 
 
 
-export default DesktopMenuBottom;
+export default memo(DesktopMenuBottom);

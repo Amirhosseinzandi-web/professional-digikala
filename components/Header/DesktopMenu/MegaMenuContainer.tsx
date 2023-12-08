@@ -1,6 +1,7 @@
 "use client"
 
-import { memo, useEffect } from "react";
+import useDataStore from "@/components/Store/CreateSlice";
+import { memo, useEffect, useState } from "react";
 
 type propsType = {
     showMegaMenu: boolean
@@ -9,6 +10,9 @@ type propsType = {
 
 
 const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu }) => {
+    const [prevVal, setPrevVal] = useState(0)
+    const [newVal, setNewVal] = useState(0)
+    const { setModalSearch, openSearchModalDesktop } = useDataStore(state => state)
 
     useEffect(() => {
         document.querySelector(".mega-menu-nav-container .mega-menu-nav-items:nth-of-type(1)")?.classList.add("active-menu")
@@ -39,19 +43,66 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
 
 
     useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setNewVal(document.documentElement.scrollTop);
+            setShowMegaMenu(false)
+        })
+    }, [])
+
+
+    useEffect(() => {
+        setPrevVal(newVal);
+    }, [newVal])
+
+
+
+    useEffect(() => {
+        let elem = document.querySelector(".desktop-menu-container")!
+        let _nav = document.querySelector("nav")!
+
+        if (prevVal < newVal) {
+
+            setTimeout(() => {
+                elem.classList.add("reduce-height")
+            }, 100);
+
+        } else {
+
+
+            setTimeout(() => {
+                elem.classList.remove("reduce-height")
+            }, 100)
+
+        }
+
 
         if (showMegaMenu) {
-            document.querySelector("main .shadow")?.classList.add("shadow-active")
+            document.querySelector("main .shadow")?.classList.add("shadow-active");
+            (elem as HTMLElement).style.overflow = "unset";
+            setModalSearch(false)
+
         } else {
-            document.querySelector("main .shadow")?.classList.remove("shadow-active")
+            document.querySelector("main .shadow")?.classList.remove("shadow-active");
+            (elem as HTMLElement).style.overflow = "hidden"
+
         }
-    }, [showMegaMenu])
+
+        if (openSearchModalDesktop) {
+            elem.classList.remove("reduce-height");
+            (elem as HTMLElement).style.overflow = "unset";
+        }
+
+
+
+    }, [showMegaMenu, newVal, openSearchModalDesktop])
+
+
 
 
     return (
         <>
-            <section className={`mega-menu-container flex p-3 ${showMegaMenu ? "flex" : "hidden"} `} onMouseEnter={() => setShowMegaMenu(true)} onMouseLeave={() => setShowMegaMenu(false)}>
-                <div className="w-[30%] border border-rose-500">
+            <section className={`mega-menu-container p-3 ${showMegaMenu ? "flex" : "hidden"} `} onMouseEnter={() => setShowMegaMenu(true)} onMouseLeave={() => setShowMegaMenu(false)}>
+                <div className="w-[30%] border">
                     <section className="mega-menu-nav-container">
                         <div className="mega-menu-nav-items m-5 flex items-center desktop-menu-color text-sm font-medium cursor-pointer" data-status="1">
                             <i className="bi bi-phone inline-flex"></i>
@@ -107,18 +158,646 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
                     </section>
                 </div>
 
-                <div className="w-[70%] border border-blue-500 mega-menu-content-container">
-                    <div data-status="1">آیتم 1</div>
-                    <div data-status="2">آیتم 2</div>
-                    <div data-status="3">آیتم 3</div>
-                    <div data-status="4">آیتم 4</div>
-                    <div data-status="5">آیتم 5</div>
-                    <div data-status="6">آیتم 6</div>
-                    <div data-status="7">آیتم 7</div>
-                    <div data-status="8">آیتم 8</div>
-                    <div data-status="9">آیتم 9</div>
-                    <div data-status="10">آیتم 10</div>
-                    <div data-status="11">آیتم 11</div>
+                <div className="w-[70%] border mega-menu-content-container p-4">
+                    <div data-status="1" className="flex gap-5 justify-evenly">
+                        <section>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                        </section>
+                        <section>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                        </section>
+                        <section>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                        </section>
+                        <section>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                            <p>item1</p>
+                        </section>
+                    </div>
+
+                    <div data-status="2" className="flex gap-5 justify-evenly">
+                        <section>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                        </section>
+                        <section>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                        </section>
+                        <section>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                        </section>
+                        <section>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                            <p>item2</p>
+                        </section>
+                    </div>
+                    <div data-status="3" className="flex gap-5 justify-evenly">
+                        <section>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                        </section>
+                        <section>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                        </section>
+                        <section>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                        </section>
+                        <section>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                            <p>item3</p>
+                        </section>
+                    </div>
+                    <div data-status="4" className="flex gap-5 justify-evenly">
+                        <section>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                        </section>
+                        <section>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                        </section>
+                        <section>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                        </section>
+                        <section>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                            <p>item4</p>
+                        </section>
+                    </div>
+                    <div data-status="5" className="flex gap-5 justify-evenly">
+                        <section>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                        </section>
+                        <section>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                        </section>
+                        <section>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                        </section>
+                        <section>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                            <p>item5</p>
+                        </section>
+                    </div>
+                    <div data-status="6" className="flex gap-5 justify-evenly">
+                        <section>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                        </section>
+                        <section>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                        </section>
+                        <section>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                        </section>
+                        <section>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                            <p>item6</p>
+                        </section>
+                    </div>
+                    <div data-status="7" className="flex gap-5 justify-evenly">
+                        <section>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                        </section>
+                        <section>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                        </section>
+                        <section>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                        </section>
+                        <section>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                            <p>item7</p>
+                        </section>
+                    </div>
+                    <div data-status="8" className="flex gap-5 justify-evenly">
+                        <section>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                        </section>
+                        <section>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                        </section>
+                        <section>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                        </section>
+                        <section>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                            <p>item8</p>
+                        </section>
+                    </div>
+                    <div data-status="9" className="flex gap-5 justify-evenly">
+                        <section>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                        </section>
+                        <section>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                        </section>
+                        <section>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                        </section>
+                        <section>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                            <p>item9</p>
+                        </section>
+                    </div>
+                    <div data-status="10" className="flex gap-5 justify-evenly">
+                        <section>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                        </section>
+                        <section>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                        </section>
+                        <section>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                        </section>
+                        <section>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                            <p>item10</p>
+                        </section>
+                    </div>
+                    <div data-status="11" className="flex gap-5 justify-evenly">
+                        <section>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                        </section>
+                        <section>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                        </section>
+                        <section>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                        </section>
+                        <section>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                            <p>item11</p>
+                        </section>
+                    </div>
                 </div>
             </section>
 

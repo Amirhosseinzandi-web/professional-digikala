@@ -17,12 +17,15 @@ export type ItemsType = {
 export type DataListArrayType = {
     DataList : ItemsType[]
     error : boolean
+    openSearchModalDesktop : boolean
 }
 
 
 export type DataStoreType = {
     DataList: ItemsType[]
     error : boolean
+    openSearchModalDesktop : boolean
     generateItems: (newRecords: ItemsType[]) => void
     setError : (newRecord:boolean) =>void
+    setModalSearch : (newRecord:boolean) =>void
 }
