@@ -77,12 +77,12 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
 
 
         if (showMegaMenu) {
-            document.querySelector("main .shadow")?.classList.add("shadow-active");
+            document.querySelector("main .shadow")?.classList.add("dark--mode");
             (elem as HTMLElement).style.overflow = "unset";
             setModalSearch(false)
 
         } else {
-            document.querySelector("main .shadow")?.classList.remove("shadow-active");
+            document.querySelector("main .shadow")?.classList.remove("dark--mode");
             (elem as HTMLElement).style.overflow = "hidden"
 
         }

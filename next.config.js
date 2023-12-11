@@ -1,7 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['www.digikala.com', 'dkstatics-public.digikala.com' , 'fakestoreapi.com']
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'www.digikala.com'
+            },
+            {
+                protocol: "https",
+                hostname: "dkstatics-public.digikala.com"
+            },
+            {
+                protocol: "https",
+                hostname: "fakestoreapi.com"
+            }
+        ]
     }
 }
 
