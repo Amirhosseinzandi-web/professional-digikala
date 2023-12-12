@@ -36,11 +36,6 @@ const DesktopMenuTop: React.FC = () => {
             }
         })
 
-        if (openSearchModalDesktop) {
-            // document.documentElement.style.overflowY = "hidden"
-        } else {
-            // document.documentElement.style.overflowY = "auto"
-        }
 
         setTimeout(() => {
             document.getElementById("inp")?.focus()

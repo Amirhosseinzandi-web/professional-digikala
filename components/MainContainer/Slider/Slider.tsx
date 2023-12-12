@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import { useState } from "react"
+import { memo, useState } from "react"
 import LoadingPic from "../../../public/loading.gif"
 
 
@@ -13,7 +13,7 @@ const Slider = () => {
 
 
     return (
-        <section className="slider container mx-auto mt-[60px] lg:mt-[111px]">
+        <section className="slider container mx-auto mt-[60px] lg:mt-[130px]">
             <figure className="w-full">
             <Image className={`loading mx-auto ${loading ? "block" : "hidden"}`} priority={true} src={LoadingPic} alt="loading" width={500} height={500} />
 
@@ -23,4 +23,4 @@ const Slider = () => {
     );
 }
 
-export default Slider;
+export default memo(Slider);

@@ -41,60 +41,56 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
         })
     }, [])
 
+    // **********************************************************************************
 
     useEffect(() => {
-        window.addEventListener("scroll", () => {
+
+        const HandleScroll = () => {
             setNewVal(document.documentElement.scrollTop);
             setShowMegaMenu(false)
-        })
+        }
+
+        window.addEventListener("scroll", HandleScroll)
+
+        return () => {
+            window.removeEventListener("scroll", HandleScroll)
+        }
+
     }, [])
 
-
+    // **********************************************************************************
     useEffect(() => {
+
         setPrevVal(newVal);
-    }, [newVal])
-
-
-
-    useEffect(() => {
-        let elem = document.querySelector(".desktop-menu-container")!
         let _nav = document.querySelector("nav")!
 
-        if (prevVal < newVal) {
+        if (newVal > 250) {
 
-            setTimeout(() => {
-                elem.classList.add("reduce-height")
-            }, 100);
-
-        } else {
-
-
-            setTimeout(() => {
-                elem.classList.remove("reduce-height")
-            }, 100)
+            if (prevVal < newVal) {
+                setTimeout(() => {
+                    _nav.classList.add("nav--reduce-height")
+                }, 100)
+            } else {
+                setTimeout(() => {
+                    _nav.classList.remove("nav--reduce-height")
+                }, 100)
+            }
 
         }
 
+        // ***************************************************************
 
         if (showMegaMenu) {
             document.querySelector("main .shadow")?.classList.add("dark--mode");
-            (elem as HTMLElement).style.overflow = "unset";
+            (_nav as HTMLElement).style.overflow = "unset";
             setModalSearch(false)
 
         } else {
             document.querySelector("main .shadow")?.classList.remove("dark--mode");
-            (elem as HTMLElement).style.overflow = "hidden"
-
+            (_nav as HTMLElement).style.overflow = "hidden"
         }
 
-        if (openSearchModalDesktop) {
-            elem.classList.remove("reduce-height");
-            (elem as HTMLElement).style.overflow = "unset";
-        }
-
-
-
-    }, [showMegaMenu, newVal, openSearchModalDesktop])
+    }, [newVal, showMegaMenu])
 
 
 

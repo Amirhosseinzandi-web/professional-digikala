@@ -96,8 +96,12 @@
 .active-menu {
     color: var(--lightRed)
 }
-.reduce-height{
-    height: calc(111px - 42px) !important;
+.nav--reduce-height{
+    height: 0px !important;
+    overflow: hidden !important;
+}
+.nav--border-top{
+    border-top: 1px solid #e5e7eb;
 }
 
 @import "../styles/Master.scss";

@@ -10,8 +10,8 @@ import useDataStore from "@/components/Store/CreateSlice";
 
 const DesktopMenuBottom: React.FC = () => {
     const [showMegaMenu, setShowMegaMenu] = useState(false)
-    const { setModalSearch, openSearchModalDesktop } = useDataStore(state => state)
 
+    
     const MenuHandler = (e:React.MouseEvent) => {
         e.stopPropagation()
         setShowMegaMenu(true)
@@ -21,7 +21,7 @@ const DesktopMenuBottom: React.FC = () => {
 
     return (
         <>
-            <nav className="hidden lg:block desktop-menu-bottom container mx-auto px-3 border relative">
+            <nav className="nav hidden lg:block desktop-menu-bottom container mx-auto px-3 nav--border-top relative">
                 <div>
                     <div className="flex w-full justify-between">
                         <div className="flex">
