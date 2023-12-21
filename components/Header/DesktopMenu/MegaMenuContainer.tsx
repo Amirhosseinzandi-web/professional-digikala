@@ -15,30 +15,43 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
     const { setModalSearch, openSearchModalDesktop } = useDataStore(state => state)
 
     useEffect(() => {
-        document.querySelector(".mega-menu-nav-container .mega-menu-nav-items:nth-of-type(1)")?.classList.add("active-menu")
-        document.querySelector(".mega-menu-content-container div:nth-of-type(1)")?.classList.add("show-menu")
-        document.querySelectorAll(".mega-menu-nav-container .mega-menu-nav-items")?.forEach((el) => {
+        document.querySelector(".mega-menu-nav-container .mega-menu-nav-items:nth-of-type(1)")?.classList.add("active-menu");
+        document.querySelector(".mega-menu-content-container div:nth-of-type(1)")?.classList.add("show-menu");
 
-            (el as HTMLElement).addEventListener("mouseenter", () => {
 
-                document.querySelectorAll(".mega-menu-nav-container .mega-menu-nav-items")?.forEach((item) => {
-                    item.classList.remove("active-menu")
+        const setActiveMenu = (e: MouseEvent) => {
+            const el = e.target as HTMLElement;
+            document.querySelectorAll(".mega-menu-nav-container .mega-menu-nav-items")?.forEach((item) => {
+                item.classList.remove("active-menu")
+            })
+
+            el.classList.add("active-menu")
+
+            if (el.classList.contains("active-menu")) {
+
+                document.querySelectorAll(".mega-menu-content-container div")?.forEach((sl) => {
+                    sl.classList.remove("show-menu")
+                    if (el.getAttribute("data-status") === sl.getAttribute("data-status")) {
+                        sl.classList.add("show-menu")
+                    }
                 })
 
-                el.classList.add("active-menu")
+            }
+        }
 
-                if (el.classList.contains("active-menu")) {
 
-                    document.querySelectorAll(".mega-menu-content-container div")?.forEach((sl) => {
-                        sl.classList.remove("show-menu")
-                        if (el.getAttribute("data-status") === sl.getAttribute("data-status")) {
-                            sl.classList.add("show-menu")
-                        }
-                    })
+        document.querySelectorAll(".mega-menu-nav-container .mega-menu-nav-items")?.forEach((el) => {
 
-                }
-            })
-        })
+            (el as HTMLElement).addEventListener("mouseenter", setActiveMenu)
+        });
+
+
+        return () => {
+
+            document.querySelectorAll(".mega-menu-nav-container .mega-menu-nav-items")?.forEach((el) => {
+                (el as HTMLElement).removeEventListener("mouseenter", setActiveMenu)
+            });
+        }
     }, [])
 
     // **********************************************************************************
@@ -60,20 +73,22 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
 
     // **********************************************************************************
     useEffect(() => {
+        const shadow = document.querySelector(".shadow") as HTMLElement;
+        let _nav = document.querySelector(".nav") as HTMLElement;
 
         setPrevVal(newVal);
-        let _nav = document.querySelector("nav")!
+
 
         if (newVal > 250) {
 
             if (prevVal < newVal) {
                 setTimeout(() => {
                     _nav.classList.add("nav--reduce-height")
-                }, 100)
+                }, 200)
             } else {
                 setTimeout(() => {
                     _nav.classList.remove("nav--reduce-height")
-                }, 100)
+                }, 200)
             }
 
         }
@@ -81,15 +96,15 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
         // ***************************************************************
 
         if (showMegaMenu) {
-            document.querySelector("main .shadow")?.classList.add("dark--mode");
-            (_nav as HTMLElement).style.overflow = "unset";
+            shadow.classList.add("dark--mode");
+            _nav.style.overflow = "unset";
             setModalSearch(false)
 
         } else {
-            document.querySelector("main .shadow")?.classList.remove("dark--mode");
-            (_nav as HTMLElement).style.overflow = "hidden"
+            shadow.classList.remove("dark--mode");
+            _nav.style.overflow = "hidden"
         }
-        
+
     }, [newVal, showMegaMenu])
 
 
