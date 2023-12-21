@@ -1,6 +1,6 @@
 "use client"
 
-import { memo, useLayoutEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import MegaMenuContainer from "./MegaMenuContainer";
 
 
@@ -23,7 +23,7 @@ const DesktopMenuBottom: React.FC = () => {
         setShowMegaMenu(false);
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const _time = 150;
         const redLine = document.querySelector(".nav__red-line-border") as HTMLElement;
         const _nav = document.querySelector(".nav") as HTMLElement;
