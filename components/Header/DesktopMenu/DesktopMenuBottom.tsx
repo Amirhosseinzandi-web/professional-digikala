@@ -1,6 +1,6 @@
 "use client"
 
-import { memo, useEffect, useLayoutEffect, useState } from "react";
+import { memo, useLayoutEffect, useState } from "react";
 import MegaMenuContainer from "./MegaMenuContainer";
 
 
@@ -19,7 +19,7 @@ const DesktopMenuBottom: React.FC = () => {
         setShowMegaMenu(true)
     }
 
-    const MenuHandlerLeave = () =>{
+    const MenuHandlerLeave = () => {
         setShowMegaMenu(false);
     }
 
@@ -27,7 +27,7 @@ const DesktopMenuBottom: React.FC = () => {
         const _time = 150;
         const redLine = document.querySelector(".nav__red-line-border") as HTMLElement;
         const _nav = document.querySelector(".nav") as HTMLElement;
-        const _li = document.querySelector(".nav .nav__items") as HTMLElement;
+
 
         setComponentIsReady(true);
 
@@ -51,19 +51,18 @@ const DesktopMenuBottom: React.FC = () => {
                 redLine.style.width = `0px`;
             }
 
-            if (isInLi && isInNav) {
-                setTimeout(() => {
-                    redLine.style.transform = `translateX(${_distance}px)`;
-                    redLine.style.width = `${_width}px`;
-                }, _time);
-            }
+
+            setTimeout(() => {
+                redLine.style.transform = `translateX(${_distance}px)`;
+                redLine.style.width = `${_width}px`;
+            }, _time);
 
 
         }
 
+    
 
         const mouseLeaveHandler = (e: MouseEvent) => {
-            // redLine.style.width = `0px`;
             setIsInLi(false)
         }
 
@@ -78,27 +77,22 @@ const DesktopMenuBottom: React.FC = () => {
 
 
         if (showMegaMenu) {
-            // setIsInLi(true);
-            setTimeout(()=>{
-                redLine.classList.add("manual-width")
-            },_time)
-        }else{
-            
-                redLine.classList.remove("manual-width")
-            
-            
+            setIsInLi(true);
         }
+
+
+        if (!isInNav && !showMegaMenu) {
+            setIsInLi(false);
+        }
+
 
         if (!isInLi) {
-            redLine.classList.add("close");
-
+            redLine.classList.add("red-line-close");
         } else {
-
-            redLine.classList.remove("close");
+            redLine.classList.remove("red-line-close");
         }
-        // if (!isInNav && !showMegaMenu) {
-        //     redLine.classList.add("close");
-        // }
+
+
 
         return () => {
             navItems.forEach((el) => {
