@@ -1,3 +1,4 @@
+import { memo } from "react";
 import DesktopMenuBottom from "./DesktopMenuBottom";
 import DesktopMenuTop from "./DesktopMenuTop";
 
@@ -15,4 +16,4 @@ const DesktopMenuContainer:React.FC = () => {
     );
 }
 
-export default DesktopMenuContainer;
+export default memo(DesktopMenuContainer);

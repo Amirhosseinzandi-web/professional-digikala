@@ -77,37 +77,31 @@ body {
                 }
             }
 
-            >nav {
-                height: 42px;
+            >.nav {
+                height: 43px;
                 overflow: hidden;
                 transition: 0.4s ease;
 
-                .nav-items {
+                .nav__red-line-container {
                     position: relative;
+                    z-index: 10;
+                    pointer-events: none;
+                    top: -3px;
 
-                    .red-line {
-                        position: absolute;
-                        bottom: 0;
-                        background-color: red;
-                        width: 0%;
+                    .nav__red-line-border {
+                        width: 0;
                         height: 2px;
-                        left: 50%;
-                        transition: 0.4s ease;
-                        z-index: 2;
-                    }
-
-                    &:hover {
-                        .red-line {
-                            left: 0;
-                            width: 100%;
-                        }
+                        background-color: red;
+                        transition: 0.2s ease;
+                        pointer-events: none;
                     }
                 }
 
                 >.mega-menu-container {
                     position: absolute;
                     // border: 1px solid black;
-                    top: 38px;
+                    // top: 38px;
+                    top: 42px;
                     width: 97%;
                     height: 500px;
                     background-color: white;

@@ -89,7 +89,7 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
             document.querySelector("main .shadow")?.classList.remove("dark--mode");
             (_nav as HTMLElement).style.overflow = "hidden"
         }
-
+        
     }, [newVal, showMegaMenu])
 
 
