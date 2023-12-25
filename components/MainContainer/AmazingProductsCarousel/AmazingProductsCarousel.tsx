@@ -9,14 +9,11 @@ import LoadingPic from "../../../public/loading.gif"
 
 
 const AmazingProductsCarousel = () => {
-    const { generateItems, DataList, setError } = useDataStore(state => state)
+    const { fetchData , DataList } = useDataStore(state => state)
 
 
     useEffect(() => {
-        axios.get("https://fakestoreapi.com/products/")
-            .then(res => generateItems(res.data))
-            .catch(err =>setError(true)
-            )
+        fetchData()
     }, [])
 
 

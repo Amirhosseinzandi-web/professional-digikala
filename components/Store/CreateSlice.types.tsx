@@ -25,7 +25,6 @@ export type DataStoreType = {
     DataList: ItemsType[]
     error : boolean
     openSearchModalDesktop : boolean
-    generateItems: (newRecords: ItemsType[]) => void
-    setError : (newRecord:boolean) =>void
+    fetchData: () => void
     setModalSearch : (newRecord:boolean) =>void
 }
