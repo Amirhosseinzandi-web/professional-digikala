@@ -52,7 +52,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 5;    
+    z-index: 5;
 }
 
 .dark--mode {
@@ -71,9 +71,6 @@
     z-index: 5;
 }
 
-.v-none{
-    visibility: hidden !important;
-}
 .desktop-menu-color {
     color: var(--desktopMenuColor);
 }
@@ -98,15 +95,18 @@
 .active-menu {
     color: var(--lightRed)
 }
-.nav--reduce-height{
+
+.nav--reduce-height {
     height: 0px !important;
     overflow: hidden !important;
 }
-.nav--border-top{
+
+.nav--border-top {
     border-top: 1px solid #e5e7eb;
 }
-.red-line-close{
-    width: 0px !important ;
+
+.red-line-close {
+    width: 0px !important;
 }
 
 
