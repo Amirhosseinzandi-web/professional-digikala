@@ -125,10 +125,26 @@ body {
     }
 
     >main {
+        .slider.skeleton {
+            opacity: 0.7;
+            animation: skeleton-loading 1s linear infinite alternate-reverse;
+        }
+
+        @keyframes skeleton-loading {
+            0% {
+                background-color: hsl(200, 20%, 70%);
+            }
+
+            100% {
+                background-color: hsl(200, 20%, 95%);
+            }
+        };
+
         >.slider {
             min-height: 264.58px;
             user-select: none;
             display: flex;
+
             .loading {
                 width: 100px;
                 height: 100px;

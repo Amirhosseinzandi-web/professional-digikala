@@ -79,7 +79,7 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
         setPrevVal(newVal);
 
 
-        if (newVal > 250) {
+        if (newVal > 550) {
 
             if (prevVal < newVal) {
                 setTimeout(() => {

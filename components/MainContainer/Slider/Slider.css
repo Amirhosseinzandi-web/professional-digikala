@@ -35,6 +35,9 @@
 .swiper-button-next {
     width: 40px !important;
     height: 40px !important;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
 }
 
 .swiper-button-prev {
@@ -44,12 +47,20 @@
 
 .swiper-button-next {
     top: 75% !important;
-    right: 80px !important;
+    right: 75px !important;
 }
+
+/* .swiper-button-prev::after {
+    content: "\003E" !important;
+}
+
+.swiper-button-next::after {
+    content: "\003C" !important;
+} */
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-    font-size: 15px !important;
+    font-size: 17px !important;
     color: black;
     background-color: white !important;
     width: 100% !important;
@@ -58,5 +69,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bolder;
+    font-weight: 900 !important;
+}
+
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next {
+    opacity: 1;
+    visibility: visible;
 }

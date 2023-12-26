@@ -1,7 +1,7 @@
 "use client"
 import "./Slider.css"
 import Image from "next/image";
-import { memo, useState } from "react"
+import { memo, useEffect, useState } from "react"
 import pic1 from "../../../public/1.webp"
 import pic2 from "../../../public/2.webp"
 import pic3 from "../../../public/3.webp"
@@ -26,6 +26,17 @@ import SwiperCore from 'swiper';
 
 const Slider = () => {
     const [swiperStatus, setSwiperStatus] = useState<SwiperCore | null>(null);
+    const [isLoded, setIsLoded] = useState(false);
+
+
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoded(true)
+        }, 400)
+    }, [])
+
+
 
     const swiperInit = (swiper: SwiperCore) => {
         setSwiperStatus(swiper);
@@ -35,34 +46,35 @@ const Slider = () => {
 
     const handleMouseEnter = () => {
         if (swiperStatus) {
-            swiperStatus.autoplay.stop();
+            swiperStatus?.autoplay?.stop();
         }
     }
 
 
     const handleMouseLeave = () => {
         if (swiperStatus) {
-            swiperStatus.autoplay.start();
+            swiperStatus?.autoplay?.start();
         }
     }
 
 
 
     return (
-        <section className="slider container mx-auto mt-[60px] lg:mt-[130px]" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <section className={`slider container mx-auto mt-[60px] lg:mt-[130px] ${isLoded ? "" : "skeleton"}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <Swiper onSwiper={swiperInit}
                 slidesPerView={1}
                 spaceBetween={30}
                 loop={true}
+                grabCursor={true}
                 pagination={{
                     clickable: true,
                 }}
                 autoplay={{
-                    delay: 5000
+                    delay: 5000,
                 }}
                 navigation={true}
                 modules={[Pagination, Navigation, Autoplay]}
-                className="mySwiper"
+                className={`mySwiper ${isLoded ? "" : "v-none"}`}
             >
                 <SwiperSlide>
                     <figure>
