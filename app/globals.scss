@@ -13,6 +13,7 @@
     --lightRed: #ef4056;
     --green: #39ae00;
     --bluePurpleColor: #987eff85;
+    --similarToBlack: #3f4064
 }
 
 @font-face {
@@ -27,6 +28,10 @@
 
 .light-gray-text {
     color: var(--lightGrayText)
+}
+
+.similar-to-black {
+    color: var(--similarToBlack)
 }
 
 .light-gray-bg {

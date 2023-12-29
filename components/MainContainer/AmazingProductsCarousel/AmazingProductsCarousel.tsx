@@ -1,7 +1,6 @@
 "use client"
 
 import useDataStore from "@/components/Store/CreateSlice"
-import axios from "axios"
 import { memo, useEffect } from "react"
 import Image from "next/image"
 import LoadingPic from "../../../public/loading.gif"
@@ -9,7 +8,7 @@ import LoadingPic from "../../../public/loading.gif"
 
 
 const AmazingProductsCarousel = () => {
-    const { fetchData , DataList } = useDataStore(state => state)
+    const { fetchData, DataList } = useDataStore(state => state)
 
 
     useEffect(() => {

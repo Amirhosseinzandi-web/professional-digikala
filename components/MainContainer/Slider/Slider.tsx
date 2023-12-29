@@ -52,7 +52,7 @@ const Slider = () => {
     useEffect(() => {
         setTimeout(() => {
             setIsLoded(true)
-        }, 1000)
+        }, 2000)
     }, [])
 
 
