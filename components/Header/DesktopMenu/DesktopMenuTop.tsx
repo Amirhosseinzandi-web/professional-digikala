@@ -29,9 +29,10 @@ const DesktopMenuTop: React.FC = () => {
 
 
     useEffect(() => {
+        const searchModal = document.querySelector(".search-modal") as HTMLElement;
         window.addEventListener("click", (e) => {
             e.stopPropagation()
-            if (openSearchModalDesktop) {
+            if (openSearchModalDesktop && !searchModal.contains(e.target as HTMLElement)) {
                 setModalSearch(false)
             }
         })
