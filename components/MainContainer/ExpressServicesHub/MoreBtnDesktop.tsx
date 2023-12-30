@@ -63,7 +63,7 @@ const MoreBtnDesktop: React.FC<MoreBtnDesktopProps> = ({ moreSectionClose }) => 
                 </div>
                 {/* *************************************************************** */}
                 <div className="overflow-y-auto h-[90%]">
-                    <div className="grid gap-4 mt-12 w-[95%] mx-auto" style={{gridTemplateColumns: "repeat(6, minmax(0, 1fr))"}}>
+                    <div className="grid gap-4 mt-3" style={{gridTemplateColumns: "repeat(6, minmax(0, 1fr))"}}>
                         <div>
                             <figure className="flex flex-col items-center">
                                 <Image src="https://dkstatics-public.digikala.com/digikala-bellatrix/a5e92320101910c6bd31f816e22d35648085af19_1703192218.png" alt="pic" width={50} height={50} />
