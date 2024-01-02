@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.scss'
-
+import ReactQuery from '@/components/Store/ReactQuery'
 
 
 export const metadata: Metadata = {
@@ -16,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <ReactQuery>
+          {children}
+        </ReactQuery>
       </body>
     </html>
   )

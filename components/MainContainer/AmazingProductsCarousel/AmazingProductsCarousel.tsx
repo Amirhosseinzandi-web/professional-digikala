@@ -4,17 +4,33 @@ import useDataStore from "@/components/Store/CreateSlice"
 import { memo, useEffect } from "react"
 import Image from "next/image"
 import LoadingPic from "../../../public/loading.gif"
+import { useQuery } from "react-query";
+import Axios from "axios";
+import mainApi from "@/components/Store/Api/Api"
 
 
 
 const AmazingProductsCarousel = () => {
-    const { fetchData, DataList } = useDataStore(state => state)
+    const { DataList, setDataList , setLoadingHandler , setError  , loadingHandler} = useDataStore(state => state)
+
+    const { data, isLoading , error} = useQuery(["test"], () => {
+       return Axios.get(mainApi).then(res => res.data)
+    })
 
 
     useEffect(() => {
-        fetchData()
-    }, [])
+        if(data){
+            setDataList(data)
+        }
 
+        if(!isLoading){
+            setLoadingHandler(false)
+        }
+        if(error){
+            setError(true)
+        }
+
+    }, [data, isLoading , error])
 
 
 

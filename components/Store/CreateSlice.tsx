@@ -1,36 +1,42 @@
 import { create } from "zustand";
 import { DataListArrayType, DataStoreType } from "./CreateSlice.types";
-import axios from "axios";
-import mainApi from "./Api/Api";
+
+
 
 
 const initialState: DataListArrayType = {
     DataList: [],
     error: false,
+    loadingHandler: true,
     openSearchModalDesktop: false
 }
 
 
 const useDataStore = create<DataStoreType>((set) => ({
     ...initialState,
-    fetchData: () => {
-        axios.get(mainApi)
-            .then(res => {
-                set((state) => {
-                    return {
-                        ...state,
-                        DataList: res.data
-                    }
-                })
-            })
-            .catch(err => {
-                set((state) => {
-                    return {
-                        ...state,
-                        error: true
-                    }
-                })
-            })
+    setDataList: (newRecord) => {
+        set((state) => {
+            return {
+                ...state,
+                DataList: newRecord
+            }
+        })
+    },
+    setError: (newRecord) => {
+        set((state) => {
+            return {
+                ...state,
+                error: newRecord
+            }
+        })
+    },
+    setLoadingHandler: (newRecord) => {
+        set((state) => {
+            return {
+                ...state,
+                loadingHandler: newRecord
+            }
+        })
     },
     setModalSearch: (newRecord) => {
         set(state => {

@@ -15,16 +15,20 @@ export type ItemsType = {
 
 
 export type DataListArrayType = {
-    DataList : ItemsType[]
-    error : boolean
-    openSearchModalDesktop : boolean
+    DataList: ItemsType[]
+    error: boolean
+    loadingHandler: boolean
+    openSearchModalDesktop: boolean
 }
 
 
 export type DataStoreType = {
     DataList: ItemsType[]
-    error : boolean
-    openSearchModalDesktop : boolean
-    fetchData: () => void
-    setModalSearch : (newRecord:boolean) =>void
+    error: boolean
+    setError: (newRecord: boolean) => void
+    loadingHandler: boolean
+    setLoadingHandler: (newRecord: boolean) => void
+    openSearchModalDesktop: boolean
+    setDataList: (newRecord: ItemsType[]) => void
+    setModalSearch: (newRecord: boolean) => void
 }
