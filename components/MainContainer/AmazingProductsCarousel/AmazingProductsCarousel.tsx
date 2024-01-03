@@ -72,14 +72,12 @@ const AmazingProductsCarousel = () => {
                                     <SwiperSlide key={item.id}>
                                         <div className="amzaing-products-carousel-items flex flex-col items-center justify-around p-1 lttr bg-white">
                                             <figure className="flex justify-center items-center">
-                                                {
-                                                    <Image
-                                                        src={item.image}
-                                                        width={72}
-                                                        height={77}
-                                                        alt="data"
-                                                    />
-                                                }
+                                                <Image
+                                                    src={item.image}
+                                                    width={72}
+                                                    height={77}
+                                                    alt="data"
+                                                />
                                             </figure>
                                             <p className={`text-sm desktop-menu-color font-medium`}>title : {item.category}</p>
                                             <p className={`text-sm desktop-menu-color font-medium`}>price : {item.price}$</p>
