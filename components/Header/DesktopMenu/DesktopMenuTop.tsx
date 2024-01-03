@@ -8,7 +8,7 @@ import { memo, useEffect, useState } from "react";
 
 const DesktopMenuTop: React.FC = () => {
 
-    const { DataList, error, setModalSearch, openSearchModalDesktop } = useDataStore(state => state)
+    const { DataList, errorStatus, setModalSearch, openSearchModalDesktop } = useDataStore(state => state)
     const [inputVal, setInputVal] = useState("")
     const [filteredItems, setFilteredItems] = useState([] as ItemsType[])
 
@@ -82,8 +82,8 @@ const DesktopMenuTop: React.FC = () => {
 
 
                                 <div className="p-10 lttr">
-                                    <p className={`${(filteredItems.length) < 1 ? "block" : "hidden"} ${error ? "hidden" : "block"}`}>nothing to show...</p>
-                                    <p className={error ? "block" : "hidden"}>an error occured</p>
+                                    <p className={`${(filteredItems.length) < 1 ? "block" : "hidden"} ${errorStatus ? "hidden" : "block"}`}>nothing to show...</p>
+                                    <p className={errorStatus ? "block" : "hidden"}>an error occured</p>
                                     <section className="h-[500px] py-5 px-3 overflow-y-auto">
                                         <div className="flex flex-wrap justify-around gap-3">
                                             {

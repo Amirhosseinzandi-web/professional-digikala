@@ -1,15 +1,15 @@
-.mySwiper {
+.slider .mySwiper {
     height: auto !important;
 }
 
-.swiper {
+.slider .swiper {
     width: 100%;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.swiper-slide {
+.slider .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
@@ -18,12 +18,12 @@
     align-items: center;
 }
 
-.swiper-slide figure {
+.slider .swiper-slide figure {
     width: 100%;
     height: 100%;
 }
 
-.swiper-slide img {
+.slider .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
@@ -31,8 +31,8 @@
 }
 
 
-.swiper-button-prev,
-.swiper-button-next {
+.slider .swiper-button-prev,
+.slider .swiper-button-next {
     width: 40px !important;
     height: 40px !important;
     opacity: 0;
@@ -40,12 +40,12 @@
     transition: 0.4s ease;
 }
 
-.swiper-button-prev {
+.slider .swiper-button-prev {
     top: 75% !important;
     right: 25px !important;
 }
 
-.swiper-button-next {
+.slider .swiper-button-next {
     top: 75% !important;
     right: 75px !important;
 }
@@ -58,8 +58,8 @@
     content: "\003C" !important;
 } */
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
+.slider .swiper-button-prev::after,
+.slider .swiper-button-next::after {
     font-size: 17px !important;
     color: black;
     background-color: white !important;
@@ -72,8 +72,8 @@
     font-weight: 900 !important;
 }
 
-.swiper:hover .swiper-button-prev,
-.swiper:hover .swiper-button-next {
+.slider .swiper:hover .swiper-button-prev,
+.slider .swiper:hover .swiper-button-next {
     opacity: 1;
     visibility: visible;
 }

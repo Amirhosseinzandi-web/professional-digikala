@@ -16,7 +16,7 @@ export type ItemsType = {
 
 export type DataListArrayType = {
     DataList: ItemsType[]
-    error: boolean
+    errorStatus: boolean
     loadingHandler: boolean
     openSearchModalDesktop: boolean
 }
@@ -24,8 +24,8 @@ export type DataListArrayType = {
 
 export type DataStoreType = {
     DataList: ItemsType[]
-    error: boolean
-    setError: (newRecord: boolean) => void
+    errorStatus: boolean
+    setErrorStatus: (newRecord: boolean) => void
     loadingHandler: boolean
     setLoadingHandler: (newRecord: boolean) => void
     openSearchModalDesktop: boolean
