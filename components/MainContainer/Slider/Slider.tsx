@@ -58,84 +58,86 @@ const Slider = () => {
 
 
     return (
-        <section className={`slider container flex mx-auto mt-[60px] lg:mt-[130px]`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <section className={`slider flex h-[268px] lg:h-[300px] xl:h-[400px] max-w-[1920px] mx-auto mt-[60px] lg:mt-[130px]`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {
-                isLoded ? <Swiper onSwiper={swiperInit}
-                    slidesPerView={1}
-                    spaceBetween={30}
-                    loop={true}
-                    grabCursor={true}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    autoplay={{
-                        delay: 5000,
-                    }}
-                    navigation={true}
-                    modules={[Pagination, Navigation, Autoplay]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide>
-                        <figure>
-                            <Image src={pic1} alt="pic1" width={1272} height={300} />
-                        </figure>
-                    </SwiperSlide>
+                isLoded ?
+                    <Swiper onSwiper={swiperInit}
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        grabCursor={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        autoplay={{
+                            delay: 5000,
+                        }}
+                        navigation={true}
+                        modules={[Pagination, Navigation, Autoplay]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide>
+                            <figure>
+                                <Image src={pic1} alt="pic1" width={1272} height={300} />
+                            </figure>
+                        </SwiperSlide>
 
-                    <SwiperSlide>
-                        <figure>
-                            <Image src={pic2} alt="pic2" width={1272} height={300} />
-                        </figure>
-                    </SwiperSlide>
+                        <SwiperSlide>
+                            <figure>
+                                <Image src={pic2} alt="pic2" width={1272} height={300} />
+                            </figure>
+                        </SwiperSlide>
 
-                    <SwiperSlide>
-                        <figure>
-                            <Image src={pic3} alt="pic3" width={1272} height={300} />
-                        </figure>
-                    </SwiperSlide>
+                        <SwiperSlide>
+                            <figure>
+                                <Image src={pic3} alt="pic3" width={1272} height={300} />
+                            </figure>
+                        </SwiperSlide>
 
-                    <SwiperSlide>
-                        <figure>
-                            <Image src={pic4} alt="pic4" width={1272} height={300} />
-                        </figure>
-                    </SwiperSlide>
+                        <SwiperSlide>
+                            <figure>
+                                <Image src={pic4} alt="pic4" width={1272} height={300} />
+                            </figure>
+                        </SwiperSlide>
 
-                    <SwiperSlide>
-                        <figure>
-                            <Image src={pic5} alt="pic5" width={1272} height={300} />
-                        </figure>
-                    </SwiperSlide>
+                        <SwiperSlide>
+                            <figure>
+                                <Image src={pic5} alt="pic5" width={1272} height={300} />
+                            </figure>
+                        </SwiperSlide>
 
-                    <SwiperSlide>
-                        <figure>
-                            <Image src={pic6} alt="pic6" width={1272} height={300} />
-                        </figure>
-                    </SwiperSlide>
+                        <SwiperSlide>
+                            <figure>
+                                <Image src={pic6} alt="pic6" width={1272} height={300} />
+                            </figure>
+                        </SwiperSlide>
 
-                    <SwiperSlide>
-                        <figure>
-                            <Image src={pic7} alt="pic7" width={1272} height={300} />
-                        </figure>
-                    </SwiperSlide>
+                        <SwiperSlide>
+                            <figure>
+                                <Image src={pic7} alt="pic7" width={1272} height={300} />
+                            </figure>
+                        </SwiperSlide>
 
-                    <SwiperSlide>
-                        <figure>
-                            <Image src={pic8} alt="pic8" width={1272} height={300} />
-                        </figure>
-                    </SwiperSlide>
+                        <SwiperSlide>
+                            <figure>
+                                <Image src={pic8} alt="pic8" width={1272} height={300} />
+                            </figure>
+                        </SwiperSlide>
 
-                    <SwiperSlide>
-                        <figure>
-                            <Image src={pic9} alt="pic9" width={1272} height={300} />
-                        </figure>
-                    </SwiperSlide>
+                        <SwiperSlide>
+                            <figure>
+                                <Image src={pic9} alt="pic9" width={1272} height={300} />
+                            </figure>
+                        </SwiperSlide>
 
-                    <SwiperSlide>
-                        <figure>
-                            <Image src={pic10} alt="pic10" width={1272} height={300} />
-                        </figure>
-                    </SwiperSlide>
+                        <SwiperSlide>
+                            <figure>
+                                <Image src={pic10} alt="pic10" width={1272} height={300} />
+                            </figure>
+                        </SwiperSlide>
 
-                </Swiper> :
+                    </Swiper>
+                    :
                     <Skeleton />
             }
         </section>
