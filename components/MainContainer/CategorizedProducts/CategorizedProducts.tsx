@@ -8,7 +8,7 @@ const CategorizedProducts = () => {
     const { DataList } = useDataStore(state => state)
     return (
         <section className="categorized-products">
-            <div className="px-3 container mx-auto my-10 border ">
+            <div className="px-2 container mx-auto my-10 border">
 
 
                 <section className="min-h-[412px]">

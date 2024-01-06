@@ -109,7 +109,7 @@ const DesktopMenuBottom: React.FC = () => {
 
     return (
         <>
-            <nav className={`nav hidden lg:block desktop-menu-bottom container mx-auto px-3 nav--border-top relative ${componentIsReady ? "pointer-events-auto" : "pointer-events-none"}`}>
+            <nav className={`nav hidden lg:block desktop-menu-bottom container mx-auto px-2 nav--border-top relative ${componentIsReady ? "pointer-events-auto" : "pointer-events-none"}`}>
                 <div className="h-full block">
                     <div className="flex w-full h-full justify-between">
                         <div className="flex">

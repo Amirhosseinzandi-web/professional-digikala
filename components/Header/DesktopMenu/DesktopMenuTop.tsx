@@ -61,7 +61,7 @@ const DesktopMenuTop: React.FC = () => {
 
 
     return (
-        <section className="hidden desktop-menu-top lg:flex container mx-auto py-4 px-3">
+        <section className="hidden desktop-menu-top lg:flex container mx-auto py-4 px-2">
             <div className="flex w-full">
                 <div className="flex w-[73%]">
                     <figure className="flex items-center">

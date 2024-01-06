@@ -37,7 +37,7 @@ const AmazingSupermarket = () => {
                     <AmazingSupermarketLoading />
                     :
                     <section className="amazing-supermarket-container">
-                        <div className="container mx-auto p-2 ">
+                        <div className="container mx-auto p-2">
                             <div className="amazing-supermarket-top rounded-xl overflow-hidden">
                                 <figure>
                                     <Image src={bg} alt="background" width={500} height={100} />
@@ -74,11 +74,11 @@ const AmazingSupermarket = () => {
                                         <div className="flex justify-center items-center">
 
                                             <div className="w-[44px] h-[44px] rounded-full bg-white flex justify-center items-center lg:hidden">
-                                                <i style={{color:"var(--green"}} className="bi bi-arrow-left inline-flex text-xl "></i>
+                                                <i style={{ color: "var(--green" }} className="bi bi-arrow-left inline-flex text-xl "></i>
                                             </div>
 
                                             <div className="w-[145px] h-[44px] bg-white justify-center items-center hidden lg:flex rounded-[50px]">
-                                                <div className="flex gap-2" style={{color:"var(--green)"}}>
+                                                <div className="flex gap-2" style={{ color: "var(--green)" }}>
                                                     <p className="text-sm font-medium">بیش از ۱۰۰ کالا</p>
                                                     <i className="bi bi-arrow-left inline-flex text-xl "></i>
                                                 </div>
@@ -91,9 +91,9 @@ const AmazingSupermarket = () => {
 
                             </div>
                             <div className="amazing-supermarket-bottom mt-5">
-                                <div className="flex flex-wrap gap-4 justify-between">
+                                <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
                                     {allPictures.map((el, index) => (
-                                        <section key={index} className="w-[40%] lg:w-[20%] 2xl:w-[15%]">
+                                        <section key={index} className="w-auto">
                                             <figure className="rounded-xl overflow-hidden">
                                                 <Image width={218} height={163} src={el.src} alt={el.alt} />
                                             </figure>
