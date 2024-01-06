@@ -2,7 +2,6 @@
 import { memo } from "react"
 import "../AmazingProductsCarousel/Slider.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css/bundle';
 import Skeleton from "react-loading-skeleton"
 
 

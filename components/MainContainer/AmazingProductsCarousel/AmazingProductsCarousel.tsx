@@ -8,7 +8,6 @@ import Axios from "axios";
 import mainApi from "@/components/Store/Api/Api"
 import "../AmazingProductsCarousel/Slider.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css/bundle';
 import { FreeMode, Navigation } from 'swiper/modules';
 import AmazingProductsCarouselLoading from "./AmazingProductsCarouselLoading"
 
