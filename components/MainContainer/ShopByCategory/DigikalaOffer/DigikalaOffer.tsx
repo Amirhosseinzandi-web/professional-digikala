@@ -1,5 +1,9 @@
+"use client"
 import Image from "next/image";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Navigation } from 'swiper/modules';
+import LoadingPic from "../../../../public/loading.gif"
+import "../DigikalaOffer/DigikalaOfferSlider.css"
 
 type moreCategoriesType = {
     src: string
@@ -82,8 +86,45 @@ const DigikalaOffer = () => {
                     </h2>
                 </div>
 
-                <div className="flex flex-wrap mt-3 justify-around gap-5 border border-gray-300 rounded-lg py-5">
-                    {
+                <div className="shop-by-category-container__digikala-offer__slider flex flex-wrap mt-3 justify-around gap-5 border border-gray-300 rounded-lg">
+                    <Swiper
+                        slidesPerView={7}
+                        spaceBetween={0}
+                        freeMode={true}
+                        grabCursor={true}
+                        navigation={true}
+                        modules={[FreeMode, Navigation]}
+                        className="mySwiper"
+                    >
+
+                        {
+                            Array(9).fill(0)?.map((item, i) => (
+                                <SwiperSlide key={i}>
+                                    <div>
+                                        <section className="h-[50%] border-bottom-gray border-left-gray">
+
+                                            <div>
+                                                <Image src={LoadingPic} width={90} height={90} alt="loading" />
+                                            </div>
+
+                                        </section>
+
+                                        <section className="h-[50%] border-left-gray">
+
+                                            <div>
+                                                <Image src={LoadingPic} width={90} height={90} alt="loading" />
+                                            </div>
+
+                                        </section>
+
+                                    </div>
+                                </SwiperSlide>
+                            ))
+                        }
+
+
+                    </Swiper>
+                    {/* {
                         moreCategories?.map((item, i) => (
                             <div key={i} className="w-[30%] lg:w-[15%]">
                                 <figure className="flex flex-col items-center">
@@ -92,7 +133,7 @@ const DigikalaOffer = () => {
                                 </figure>
                             </div>
                         ))
-                    }
+                    } */}
                 </div>
             </div>
         </>

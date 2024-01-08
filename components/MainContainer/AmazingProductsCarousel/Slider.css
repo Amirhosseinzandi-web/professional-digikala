@@ -48,8 +48,8 @@
     border: 2px solid rgba(0, 0, 0, 0.409);
 }
 
-.swiper-button-prev.swiper-button-disabled, 
-.swiper-button-next.swiper-button-disabled {
+.amzaing-products-carousel-container .swiper-button-prev.swiper-button-disabled, 
+.amzaing-products-carousel-container .swiper-button-next.swiper-button-disabled {
     display: none !important;
 }
 

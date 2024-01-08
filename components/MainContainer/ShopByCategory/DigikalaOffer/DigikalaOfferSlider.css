@@ -1,0 +1,27 @@
+.shop-by-category-container__digikala-offer .swiper {
+    width: 100%;
+    height: auto;
+    user-select: none;
+}
+
+.shop-by-category-container__digikala-offer .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop-by-category-container__digikala-offer .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.shop-by-category-container__digikala-offer .swiper-button-prev.swiper-button-disabled, 
+.shop-by-category-container__digikala-offer .swiper-button-next.swiper-button-disabled {
+    display: none !important;
+}

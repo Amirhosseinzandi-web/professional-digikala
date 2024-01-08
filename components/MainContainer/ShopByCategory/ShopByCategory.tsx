@@ -1,6 +1,7 @@
 import Image from "next/image";
-import DigikalaOffer from "./DigikalaOffer";
+
 import PopularBrands from "./PopularBrands";
+import DigikalaOffer from "./DigikalaOffer/DigikalaOffer";
 
 
 
@@ -103,7 +104,7 @@ const ShopByCategory = () => {
 
                 {/* ********************************************************************** */}
 
-                <DigikalaOffer />
+                <DigikalaOffer/>
 
                 {/* ****************************************************************************** */}
 
