@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
 import './globals.scss'
+import type { Metadata } from 'next'
 import ReactQuery from '@/components/Store/ReactQuery'
 import 'react-loading-skeleton/dist/skeleton.css'
 import 'swiper/css/bundle';
