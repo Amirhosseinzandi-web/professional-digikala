@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation } from 'swiper/modules';
 import LoadingPic from "../../../../public/loading.gif"
-import "../DigikalaOffer/DigikalaOfferSlider.css"
+import "./DigikalaOfferSlider.css"
 
 type moreCategoriesType = {
     firstSrc: string
@@ -13,7 +13,7 @@ type moreCategoriesType = {
 }
 
 
-const DigikalaOffer:React.FC = () => {
+const DigikalaOffer: React.FC = () => {
 
 
     const moreCategories: moreCategoriesType[] = [
@@ -64,64 +64,65 @@ const DigikalaOffer:React.FC = () => {
 
     return (
         <>
-            <div className="shop-by-category-container__digikala-offer">
-                <div>
-                    <h2 className="text-xl font-medium text-center">
-                        پیشنهاد دیجی‌کالا
-                    </h2>
-                </div>
+            <section className="digikala-offer-container">
+                <div className="container mx-auto px-2">
+                    <div>
+                        <h2 className="text-xl font-medium text-center">
+                            پیشنهاد دیجی‌کالا
+                        </h2>
+                    </div>
 
-                <div className="shop-by-category-container__digikala-offer__slider flex flex-wrap mt-3 justify-around gap-5 border border-gray-300 rounded-lg">
-                    <Swiper
-                        slidesPerView={"auto"}
-                        spaceBetween={0}
-                        freeMode={true}
-                        grabCursor={true}
-                        navigation={true}
-                        modules={[FreeMode, Navigation]}
-                        className="mySwiper"
-                    >
+                    <div className="flex flex-wrap mt-3 justify-around gap-5 border border-gray-300 rounded-lg overflow-hidden">
+                        <Swiper
+                            slidesPerView={"auto"}
+                            spaceBetween={0}
+                            freeMode={true}
+                            grabCursor={true}
+                            navigation={true}
+                            modules={[FreeMode, Navigation]}
+                            className="mySwiper"
+                        >
 
-                        {
-                            moreCategories?.map((item, i) => (
-                                <SwiperSlide key={i}>
-                                    <div className="w-[236px] 2xl:w-[218px]">
-                                        <section className="h-[50%] border-bottom-gray border-left-gray">
+                            {
+                                moreCategories?.map((item, i) => (
+                                    <SwiperSlide key={i}>
+                                        <div className="w-[236px] 2xl:w-[218px]">
+                                            <section className="h-[50%] border-bottom-gray border-left-gray">
 
-                                            <div className="h-full">
-                                                <div className="flex flex-col items-center w-full h-full overflow-hidden">
-                                                    <div style={{background : "var(--lightGrayBg)"}} className="w-[85px] h-[85px] rounded-full flex justify-center items-center overflow-hidden mt-4">
-                                                        <Image className="mix-blend-multiply" width={100} height={100} src={item.firstSrc} alt="photo" />
+                                                <div className="h-full">
+                                                    <div className="flex flex-col items-center w-full h-full overflow-hidden">
+                                                        <div style={{ background: "var(--lightGrayBg)" }} className="w-[85px] h-[85px] rounded-full flex justify-center items-center overflow-hidden mt-4">
+                                                            <Image className="mix-blend-multiply" width={100} height={100} src={item.firstSrc} alt="photo" />
+                                                        </div>
+                                                        <p className="text-sm font-semibold desktop-menu-color text-center my-4">{item.firstTitle}</p>
                                                     </div>
-                                                    <p className="text-sm font-semibold desktop-menu-color text-center my-4">{item.firstTitle}</p>
                                                 </div>
-                                            </div>
 
-                                        </section>
+                                            </section>
 
-                                        <section className="h-[50%] border-left-gray">
+                                            <section className="h-[50%] border-left-gray">
 
-                                            <div className="h-full">
-                                                <div className="flex flex-col items-center w-full h-full overflow-hidden">
-                                                    <div>
-                                                        <Image width={100} height={100} src={item.secondSrc} className="mt-4" alt="photo" />
+                                                <div className="h-full">
+                                                    <div className="flex flex-col items-center w-full h-full overflow-hidden">
+                                                        <div>
+                                                            <Image width={100} height={100} src={item.secondSrc} className="mt-4" alt="photo" />
+                                                        </div>
+                                                        <p className="text-sm font-semibold desktop-menu-color text-center my-4">{item.secondTitle}</p>
                                                     </div>
-                                                    <p className="text-sm font-semibold desktop-menu-color text-center my-4">{item.secondTitle}</p>
                                                 </div>
-                                            </div>
 
-                                        </section>
+                                            </section>
 
-                                    </div>
-                                </SwiperSlide>
-                            ))
-                        }
+                                        </div>
+                                    </SwiperSlide>
+                                ))
+                            }
 
+                        </Swiper>
 
-                    </Swiper>
-                   
+                    </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 }

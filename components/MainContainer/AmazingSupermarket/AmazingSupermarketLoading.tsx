@@ -6,8 +6,8 @@ const AmazingSupermarketLoading = () => {
 
 
     return (
-        <section className="amazing-supermarket-container--loading">
-            <div className="container mx-auto p-2">
+        <section className="amazing-supermarket-container--loading py-4">
+            <div className="container mx-auto px-2">
                 <div className="amazing-supermarket-top bg-white rounded-xl overflow-hidden">
 
 
@@ -57,19 +57,6 @@ const AmazingSupermarketLoading = () => {
                         </div>
                     </div>
 
-                </div>
-                <div className="amazing-supermarket-bottom mt-5">
-                    <div className="flex flex-wrap gap-4 justify-between">
-                        {
-                            Array(4).fill(0)?.map((el, index) => (
-                                <section key={index} className="w-[40%] lg:w-[20%] 2xl:w-[15%]">
-                                    <figure className="rounded-xl flex justify-center overflow-hidden">
-                                        <Skeleton width={201.59} height={151.19} style={{ borderRadius: "12px" }} />
-                                    </figure>
-                                </section>
-                            ))
-                        }
-                    </div>
                 </div>
             </div>
         </section>

@@ -1,0 +1,55 @@
+.popular-brands .swiper {
+    width: 100%;
+    height: auto;
+    user-select: none;
+}
+
+.popular-brands .swiper-slide {
+    width: auto !important;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popular-brands .swiper-slide:last-child {
+    border-left: 0 !important;
+}
+
+.popular-brands .swiper-button-prev,
+.popular-brands .swiper-button-next {
+    display: none;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.popular-brands .swiper-button-prev::after,
+.popular-brands .swiper-button-next::after {
+    font-size: 17px !important;
+    color: black;
+    background-color: white !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900 !important;
+    border: 1px solid rgba(0, 0, 0, 0.187);
+}
+
+.popular-brands .swiper-button-prev.swiper-button-disabled,
+.popular-brands .swiper-button-next.swiper-button-disabled {
+    display: none !important;
+}
+
+@media (min-width: 1024px) {
+
+    .popular-brands .swiper-button-prev,
+    .popular-brands .swiper-button-next {
+        display: flex;
+    }
+}

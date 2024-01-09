@@ -48,7 +48,7 @@ const MobileMenu: React.FC = () => {
 
     return (
         <>
-            <section onClick={() => setSearchToggleBox(true)} className="p-2 mobile-menu-container z- lg:hidden">
+            <section onClick={() => setSearchToggleBox(true)} className="p-2 mobile-menu-container lg:hidden">
                 <div className="flex items-center">
                     <div className="flex items-center w-fit px-2">
                         <i className="bi bi-search light-gray-text text-lg"></i>

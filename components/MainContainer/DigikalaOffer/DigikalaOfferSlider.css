@@ -1,10 +1,10 @@
-.shop-by-category-container__digikala-offer .swiper {
+.digikala-offer-container .swiper {
     width: 100%;
     height: auto;
     user-select: none;
 }
 
-.shop-by-category-container__digikala-offer .swiper-slide {
+.digikala-offer-container .swiper-slide {
     width: auto !important;
     text-align: center;
     font-size: 18px;
@@ -15,23 +15,26 @@
     justify-content: center;
     align-items: center;
 }
+.digikala-offer-container .swiper-slide:last-child>div>section {
+    border-left: 0 !important;
+}
 
-.shop-by-category-container__digikala-offer .swiper-slide img {
+.digikala-offer-container .swiper-slide img {
     display: block;
     width: 60px;
     height: 60px;
     object-fit: contain;
 }
 
-.shop-by-category-container__digikala-offer .swiper-button-prev,
-.shop-by-category-container__digikala-offer .swiper-button-next {
+.digikala-offer-container .swiper-button-prev,
+.digikala-offer-container .swiper-button-next {
     display: none;
     width: 40px !important;
     height: 40px !important;
 }
 
-.shop-by-category-container__digikala-offer .swiper-button-prev::after,
-.shop-by-category-container__digikala-offer .swiper-button-next::after {
+.digikala-offer-container .swiper-button-prev::after,
+.digikala-offer-container .swiper-button-next::after {
     font-size: 17px !important;
     color: black;
     background-color: white !important;
@@ -45,23 +48,23 @@
     border: 1px solid rgba(0, 0, 0, 0.187);
 }
 
-.shop-by-category-container__digikala-offer .swiper-button-prev.swiper-button-disabled,
-.shop-by-category-container__digikala-offer .swiper-button-next.swiper-button-disabled {
+.digikala-offer-container .swiper-button-prev.swiper-button-disabled,
+.digikala-offer-container .swiper-button-next.swiper-button-disabled {
     display: none !important;
 }
 
 @media (min-width: 1024px) {
 
-    .shop-by-category-container__digikala-offer .swiper-button-prev,
-    .shop-by-category-container__digikala-offer .swiper-button-next {
+    .digikala-offer-container .swiper-button-prev,
+    .digikala-offer-container .swiper-button-next {
         display: flex;
     }
 }
 
 @media (min-width: 1536px) {
 
-    .shop-by-category-container__digikala-offer .swiper-button-prev,
-    .shop-by-category-container__digikala-offer .swiper-button-next {
+    .digikala-offer-container .swiper-button-prev,
+    .digikala-offer-container .swiper-button-next {
         display: none;
     }
 }

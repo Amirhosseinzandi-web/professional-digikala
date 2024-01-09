@@ -10,34 +10,14 @@ import AmazingSupermarketLoading from "./AmazingSupermarketLoading";
 const AmazingSupermarket = () => {
     const { DataList, loadingHandler, errorStatus } = useDataStore(state => state)
 
-    const allPictures = [
-        {
-            src: "https://dkstatics-public.digikala.com/digikala-adservice-banners/8058ea1aae6b95ef724356e11acc09c7ff51c66d_1701253928.jpg?x-oss-process=image/quality,q_95/format,webp",
-            alt: "پارتنرشیپ-مای لیدی"
-        },
-        {
-            src: "https://dkstatics-public.digikala.com/digikala-adservice-banners/7ab376a9399957fb53682c2b92c6c35d6b3ce954_1701253937.jpg?x-oss-process=image/quality,q_95/format,webp",
-            alt: "پارتنرشیپ-مای لیدی"
-        },
-        {
-            src: "https://dkstatics-public.digikala.com/digikala-adservice-banners/98595c5c87356705ff388ae9e785114670a35055_1701254463.jpg?x-oss-process=image/quality,q_95/format,webp",
-            alt: "پارتنرشیپ-مای لیدی"
-        },
-        {
-            src: "https://dkstatics-public.digikala.com/digikala-adservice-banners/a487e5e0d29b615218df7e8aa2092ffbe343fa77_1701777408.jpg?x-oss-process=image/quality,q_95/format,webp",
-            alt: "پارتنرشیپ-مای لیدی"
-        }
-    ];
-
-
     return (
         <>
             {
                 (loadingHandler || errorStatus) ?
                     <AmazingSupermarketLoading />
                     :
-                    <section className="amazing-supermarket-container">
-                        <div className="container mx-auto p-2">
+                    <section className="amazing-supermarket-container py-4">
+                        <div className="container mx-auto px-2">
                             <div className="amazing-supermarket-top rounded-xl overflow-hidden">
                                 <figure>
                                     <Image src={bg} alt="background" width={500} height={100} />
@@ -89,17 +69,6 @@ const AmazingSupermarket = () => {
                                     </div>
                                 </div>
 
-                            </div>
-                            <div className="amazing-supermarket-bottom mt-5">
-                                <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
-                                    {allPictures.map((el, index) => (
-                                        <section key={index} className="w-auto">
-                                            <figure className="rounded-xl overflow-hidden">
-                                                <Image width={218} height={163} src={el.src} alt={el.alt} />
-                                            </figure>
-                                        </section>
-                                    ))}
-                                </div>
                             </div>
                         </div>
                     </section>

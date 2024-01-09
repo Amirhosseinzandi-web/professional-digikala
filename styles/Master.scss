@@ -239,8 +239,6 @@ body {
 
         >.amzaing-products-carousel-container,
         >.amzaing-products-carousel-container--loading {
-            background-color: var(--lightRed);
-            user-select: none;
 
             .swiper-slide {
                 width: 182px;
@@ -299,10 +297,6 @@ body {
 
         }
 
-        .amzaing-products-carousel-container--loading {
-            background-color: var(--loadingBg);
-        }
-
         // *******************************************************
         >.amazing-supermarket-container,
         >.amazing-supermarket-container--loading {
@@ -331,41 +325,11 @@ body {
                     }
                 }
             }
-
-            .amazing-supermarket-bottom {
-                figure {
-                    width: 100%;
-                    height: 100%;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        max-height: 241.5px;
-                    }
-                }
-            }
         }
 
         >.amazing-supermarket-container--loading {
             .amazing-supermarket-top {
                 background-color: whitesmoke;
-            }
-        }
-
-        .shop-by-category-container {
-            .shop-by-category-container__digikala-offer__slider {
-                overflow: hidden;
-
-                .swiper-slide {
-                    &:last-child {
-                        >div {
-                            >section {
-                                border-left: 0 !important;
-                            }
-                        }
-                    }
-                }
             }
         }
     }
