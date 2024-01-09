@@ -6,73 +6,58 @@ import LoadingPic from "../../../../public/loading.gif"
 import "../DigikalaOffer/DigikalaOfferSlider.css"
 
 type moreCategoriesType = {
-    src: string
-    title: string
+    firstSrc: string
+    firstTitle: string
+    secondSrc: string
+    secondTitle: string
 }
 
 
-const DigikalaOffer = () => {
+const DigikalaOffer:React.FC = () => {
+
 
     const moreCategories: moreCategoriesType[] = [
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/ec9a962187e1f82cc47e7a148ef99ec1c6fd024d_1656423336.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
-            title: "گوشی موبایل"
+            firstSrc: "https://dkstatics-public.digikala.com/digikala-products/ec9a962187e1f82cc47e7a148ef99ec1c6fd024d_1656423336.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            firstTitle: "گوشی موبایل",
+            secondSrc: "https://dkstatics-public.digikala.com/digikala-products/2a7c05fbbc272f35198071dd084756b206b44a49_1694700836.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            secondTitle: "هدفون، هدست و هندزفری"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/fc93220eb5f822eb5cc93c3812c07fbd434a2fa1_1675534585.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
-            title: "ساعت هوشمند"
+            firstSrc: "https://dkstatics-public.digikala.com/digikala-products/54eab84c83d2335de43895c4a29706cfa5accff5_1696526224.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            firstTitle: "ساعت هوشمند",
+            secondSrc: "https://dkstatics-public.digikala.com/digikala-products/4c0ad8206701dbb56f2e6cc8a15db3a9ce7befec_1671470920.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            secondTitle: "لپ تاپ و الترابوک"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/7feb4cb3c37a28289c1bbd7d24f06b1dca5caa4d_1695733063.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
-            title: "لپ تاپ و اولترابوک"
+            firstSrc: "https://dkstatics-public.digikala.com/digikala-products/7f0c6c207a3c72b266fc96466ff2011b48bad06f_1700307536.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            firstTitle: "کنسول خانگی",
+            secondSrc: "https://dkstatics-public.digikala.com/digikala-products/8439c8877331c42e596b4b5af672a5c76ddc9d23_1684771641.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            secondTitle: "جوراب مردانه"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/d1476a05bc84a98521a53fad140efa060a6c1bf9_1605099191.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
-            title: "کنسول خانگی"
+            firstSrc: "https://dkstatics-public.digikala.com/digikala-products/5e17eff04fbf4054215f2e480c488e6268479f19_1601998557.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            firstTitle: "مکمل دارویی",
+            secondSrc: "https://dkstatics-public.digikala.com/digikala-products/8948c22b78a85ec54c944d842da991804b942927_1632295762.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            secondTitle: "اسپیکر (بلندگو)"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-categories/c2957abd1f437415eceb6428c7dce93ef3ee7495_1701193097.png",
-            title: "زیبایی و سلامت"
+            firstSrc: "https://dkstatics-public.digikala.com/digikala-products/827b353cd2a9c336d3e55fba3c97ea995297e32f_1690197872.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            firstTitle: "تلویزیون",
+            secondSrc: "https://dkstatics-public.digikala.com/digikala-products/e10938a8268399a90fdae8e245015cf765753be4_1613486389.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            secondTitle: "لامپ و چراغ"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-categories/3e3ec550569f974bc7e9d78c30b48612e5b1c606_1701193057.png",
-            title: "خانه و آشپزخانه"
+            firstSrc: "https://dkstatics-public.digikala.com/digikala-products/68971590561c982a47d0bd5df6e5ef686f24c15d_1641027821.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            firstTitle: "سرخ کن",
+            secondSrc: "https://dkstatics-public.digikala.com/digikala-products/0333a923f53d59fac216d97b7e7b2618531fa10d_1672647946.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            secondTitle: "تبلت"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-categories/f1ff29c0399fdbeef7cef44bf6ec897f31287449_1701193077.png",
-            title: "کتاب، لوازم تحریر و هنر"
-        },
-        {
-            src: "https://dkstatics-public.digikala.com/digikala-categories/f64a3adf6e327bf1b85ce43449740d974eaaf037_1701193104.png",
-            title: "ورزش و سفر"
-        },
-        {
-            src: "https://dkstatics-public.digikala.com/digikala-categories/c48ab9fc81e7732a617f90eca608b943d4616ff7_1701193126.png",
-            title: "محصولات بهداشتی"
-        },
-        {
-            src: "https://dkstatics-public.digikala.com/digikala-products/154366.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
-            title: "بخاری برقی"
-        },
-        {
-            src: "https://dkstatics-public.digikala.com/digikala-products/73cff44507108a902b0d128e02f78524af0690eb_1641910933.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
-            title: "مکمل ورزشی و تناسب اندام"
-        },
-        {
-            src: "https://dkstatics-public.digikala.com/digikala-products/19e5fcf7184fb562ce80d3b4fc846037ebff45b5_1692097050.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
-            title: "هدفون، هدست و هندزفری"
-        },
-        {
-            src: "https://dkstatics-public.digikala.com/digikala-products/56e275dac1648915a8eb621ed818890220ae5608_1602679367.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
-            title: "مکمل دارویی"
-        },
-        {
-            src: "https://dkstatics-public.digikala.com/digikala-products/5f25267956b47517b78356231977554803d11218_1693391335.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
-            title: "لامپ و چراغ"
-        },
-        {
-            src: "https://dkstatics-public.digikala.com/digikala-products/343d9a4045a1f213bb565d4c59562092649717f1_1608126754.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
-            title: "کاغذ"
+            firstSrc: "https://dkstatics-public.digikala.com/digikala-products/efa832aa8e59001a303aa5e1b428a9b9c0417345_1701586495.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            firstTitle: "عروسک",
+            secondSrc: "https://dkstatics-public.digikala.com/digikala-products/1555a206c56224ead35900e9ce882b245288f2a8_1628185143.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+            secondTitle: "شارژر تبلت و موبایل"
         }
     ];
 
@@ -88,7 +73,7 @@ const DigikalaOffer = () => {
 
                 <div className="shop-by-category-container__digikala-offer__slider flex flex-wrap mt-3 justify-around gap-5 border border-gray-300 rounded-lg">
                     <Swiper
-                        slidesPerView={7}
+                        slidesPerView={"auto"}
                         spaceBetween={0}
                         freeMode={true}
                         grabCursor={true}
@@ -98,21 +83,31 @@ const DigikalaOffer = () => {
                     >
 
                         {
-                            Array(9).fill(0)?.map((item, i) => (
+                            moreCategories?.map((item, i) => (
                                 <SwiperSlide key={i}>
-                                    <div>
+                                    <div className="w-[236px] 2xl:w-[218px]">
                                         <section className="h-[50%] border-bottom-gray border-left-gray">
 
-                                            <div>
-                                                <Image src={LoadingPic} width={90} height={90} alt="loading" />
+                                            <div className="h-full">
+                                                <div className="flex flex-col items-center w-full h-full overflow-hidden">
+                                                    <div style={{background : "var(--lightGrayBg)"}} className="w-[85px] h-[85px] rounded-full flex justify-center items-center overflow-hidden mt-4">
+                                                        <Image className="mix-blend-multiply" width={100} height={100} src={item.firstSrc} alt="photo" />
+                                                    </div>
+                                                    <p className="text-sm font-semibold desktop-menu-color text-center my-4">{item.firstTitle}</p>
+                                                </div>
                                             </div>
 
                                         </section>
 
                                         <section className="h-[50%] border-left-gray">
 
-                                            <div>
-                                                <Image src={LoadingPic} width={90} height={90} alt="loading" />
+                                            <div className="h-full">
+                                                <div className="flex flex-col items-center w-full h-full overflow-hidden">
+                                                    <div>
+                                                        <Image width={100} height={100} src={item.secondSrc} className="mt-4" alt="photo" />
+                                                    </div>
+                                                    <p className="text-sm font-semibold desktop-menu-color text-center my-4">{item.secondTitle}</p>
+                                                </div>
                                             </div>
 
                                         </section>
@@ -124,16 +119,7 @@ const DigikalaOffer = () => {
 
 
                     </Swiper>
-                    {/* {
-                        moreCategories?.map((item, i) => (
-                            <div key={i} className="w-[30%] lg:w-[15%]">
-                                <figure className="flex flex-col items-center">
-                                    <Image width={90} height={90} src={item.src} className="my-3" alt="photo" />
-                                    <figcaption className="text-sm desktop-menu-color text-center w-[95%] overflow-hidden whitespace-nowrap text-ellipsis">{item.title}</figcaption>
-                                </figure>
-                            </div>
-                        ))
-                    } */}
+                   
                 </div>
             </div>
         </>

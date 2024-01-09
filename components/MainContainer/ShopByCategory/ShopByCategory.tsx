@@ -93,7 +93,7 @@ const ShopByCategory = () => {
                 <div className="my-24 flex flex-wrap gap-9 justify-between lg:gap-1">
 
                     <figure className="overflow-hidden rounded-lg w-full lg:w-[45%]">
-                        <Image width={452} height={181} src="https://dkstatics-public.digikala.com/digikala-adservice-banners/cc09d655334c308bc42009f8020645b88c589472_1701254187.jpg?x-oss-process=image/quality,q_95/format,webp" className="w-full h-full" alt="aks" />
+                        <Image width={452} height={181} src="https://dkstatics-public.digikala.com/digikala-adservice-banners/792b26d05b1af23cc09a37969d8739caae938b01_1704268606.gif?x-oss-process=image" className="w-full h-full" alt="aks" />
                     </figure>
 
                     <figure className="overflow-hidden rounded-lg w-full lg:w-[45%]">
