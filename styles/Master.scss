@@ -13,14 +13,8 @@ body {
     }
 
     >header {
-        overflow: auto;
 
         .mobile-menu-container {
-            position: fixed;
-            width: 100%;
-            background-color: white;
-            z-index: 10;
-            box-shadow: 0px 0px 45px black;
 
             >div {
                 height: 44px;
@@ -65,10 +59,6 @@ body {
         }
 
         .desktop-menu-container {
-            box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.55);
-            // height: 111px;
-            // overflow: hidden;
-            // transition: 0.3s ease;
 
             >section.desktop-menu-top {
                 >div {
@@ -134,8 +124,6 @@ body {
 
                 >.mega-menu-container {
                     position: absolute;
-                    // border: 1px solid black;
-                    // top: 38px;
                     top: 42px;
                     width: 97%;
                     height: 500px;

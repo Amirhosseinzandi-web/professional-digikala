@@ -62,6 +62,11 @@ const DesktopMenuTop: React.FC = () => {
 
     return (
         <>
+            <div className="desktop-menu-top__bannner h-[60px]">
+                <figure className="w-full h-full">
+                    <Image src="https://dkstatics-public.digikala.com/digikala-adservice-banners/4cbec63569b366ef5fe430204e80317052653530_1704612197.gif?x-oss-process=image" width={7000} height={60} alt="banner" className="w-full h-full object-cover" />
+                </figure>
+            </div>
             <section className="hidden desktop-menu-top lg:flex container mx-auto py-4 px-2">
                 <div className="flex w-full">
                     <div className="flex w-[73%]">

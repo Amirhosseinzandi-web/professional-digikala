@@ -58,7 +58,7 @@ const Slider = () => {
 
 
     return (
-        <section className={`slider flex h-[268px] lg:h-[300px] xl:h-[400px] max-w-[1920px] mx-auto mt-[60px] lg:mt-[130px]`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <section className={`slider flex h-[268px] lg:h-[300px] xl:h-[400px] max-w-[1920px] mx-auto mt-[10px] lg:mt-[182px]`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {
                 isLoded ?
                     <Swiper onSwiper={swiperInit}
