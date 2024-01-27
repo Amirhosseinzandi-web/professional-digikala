@@ -10,6 +10,7 @@ const DesktopMenuTop: React.FC = () => {
 
     const { DataList, errorStatus, setModalSearch, openSearchModalDesktop } = useDataStore(state => state)
     const [inputVal, setInputVal] = useState("")
+    const [delayVal, setDelayVal] = useState(inputVal)
     const [filteredItems, setFilteredItems] = useState([] as ItemsType[])
 
 
@@ -44,19 +45,28 @@ const DesktopMenuTop: React.FC = () => {
     }, [openSearchModalDesktop])
 
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setDelayVal(inputVal)
+        }, 1000)
+
+        return () => {
+            clearTimeout(timer)
+        }
+    }, [inputVal])
+
 
     useEffect(() => {
-        if (inputVal === "" || inputVal === null) {
+        if (delayVal === "" || delayVal === null) {
             setFilteredItems([])
         } else {
-            const filteredList = DataList.filter(el => el.title.toLowerCase().includes(inputVal.toLowerCase().trim()))
+            const filteredList = DataList.filter(el => el.title.toLowerCase().includes(delayVal.toLowerCase().trim()))
             if (filteredList) {
                 setFilteredItems(filteredList)
             }
         }
 
-
-    }, [inputVal])
+    }, [delayVal])
 
 
 
