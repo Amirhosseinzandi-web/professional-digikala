@@ -9,6 +9,7 @@ import Slider from "./Slider/Slider";
 import PureImagesTwo from "./PureImagesTwo/PureImagesTwo";
 import PureImagesOne from "./PureImagesOne/PureImagesOne";
 import PureImagesThree from "./PureImagesThree/PureImagesThree";
+import LastVisitsOne from "./LastVisitsOne/LastVisitsOne";
 
 
 
@@ -27,6 +28,7 @@ const MainContainer = () => {
             <DigikalaOffer />
             <PopularBrands />
             <PureImagesThree/>
+            <LastVisitsOne/>
         </main>
     );
 }
