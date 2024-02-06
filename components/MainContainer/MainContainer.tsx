@@ -10,6 +10,7 @@ import PureImagesTwo from "./PureImagesTwo/PureImagesTwo";
 import PureImagesOne from "./PureImagesOne/PureImagesOne";
 import PureImagesThree from "./PureImagesThree/PureImagesThree";
 import LastVisitsOne from "./LastVisitsOne/LastVisitsOne";
+import DigiPlus from "./DigiPlus/DigiPlus";
 
 
 
@@ -29,6 +30,7 @@ const MainContainer = () => {
             <PopularBrands />
             <PureImagesThree/>
             <LastVisitsOne/>
+            <DigiPlus/>
         </main>
     );
 }

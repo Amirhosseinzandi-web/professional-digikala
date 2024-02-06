@@ -320,5 +320,37 @@ body {
                 background-color: whitesmoke;
             }
         }
+
+        .digi-plus-container {
+            .digi-plus-container__right-item {
+                background-image: url("https://www.digikala.com/statics/img/png/digiplus/plus-widget.png");
+                background-repeat: no-repeat;
+                background-size: 400px;
+                background-position: 0% 90%;
+            }
+
+            @media (min-width: 1024px) {
+                .digi-plus-container__right-item {
+                    background-size: 80%;
+                    background-position: center 100%;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .digi-plus-container__photos-part {
+                    figure:not(:nth-of-type(-n+3)) {
+                        display: none;
+                    }
+                }
+            }
+
+            @media (max-width: 1024px) {
+                .digi-plus-container__photos-part {
+                    figure:not(:nth-of-type(-n+8)) {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }
