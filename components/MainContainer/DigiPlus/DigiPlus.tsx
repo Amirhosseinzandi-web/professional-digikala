@@ -94,7 +94,7 @@ const DigiPlus = () => {
                             <div className="digi-plus-container__photos-part flex justify-evenly md:grid md:grid-cols-4 md:place-items-center md:grid-rows-2 lg:grid-cols-6 gap-7 my-3">
                                 {
                                     AllPhotos?.map((item, ind) => (
-                                        <figure className="w-auto h-auto">
+                                        <figure key={ind} className="w-auto h-auto">
                                             <Image width={116} height={116} src={item.src} alt={item.alt} />
                                         </figure>
                                     ))
