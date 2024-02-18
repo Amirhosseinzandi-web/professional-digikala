@@ -84,10 +84,12 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
             if (prevVal < newVal) {
                 setTimeout(() => {
                     _nav.classList.add("nav--reduce-height")
+                    _nav.classList.remove("nav--border-top")
                 }, 200)
             } else {
                 setTimeout(() => {
                     _nav.classList.remove("nav--reduce-height")
+                    _nav.classList.add("nav--border-top")
                 }, 200)
             }
 
