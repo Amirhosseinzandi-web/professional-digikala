@@ -80,7 +80,7 @@ const Slider = () => {
                             allPictures?.map((el, i) => (
                                 <SwiperSlide key={i}>
                                     <figure>
-                                        <Image src={el} alt="slider" width={1272} height={300} />
+                                        <Image src={el} priority={true} alt="slider" width={1272} height={300} />
                                     </figure>
                                 </SwiperSlide>
                             ))
