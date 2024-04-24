@@ -53,12 +53,12 @@ const LastVisitsOne: React.FC = () => {
         <>
             <section className="last-visits-one-container">
                 <div className="container mx-auto px-2">
-                    <div className="lg:border rounded-lg flex flex-wrap">
+                    <div className="lg:border rounded-lg flex flex-wrap select-none">
                         <div className="w-full flex flex-wrap">
 
                             {
                                 data.map((item, ind) => (
-                                    <section key={ind} className="w-[100%] lg:w-[25%] lg:border-l p-2">
+                                    <section key={ind} className="w-[100%] lg:w-[25%] lg:border-l last-of-type:border-l-0 p-2">
                                         <div>
                                             <h2 className="font-semibold text-lg">{item.titel1}</h2>
                                             <p className="text-xs light-gray-text my-3">{item.title2}</p>
