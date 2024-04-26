@@ -11,49 +11,49 @@ type dataType = {
 }
 
 
-const LastVisitsOne: React.FC = () => {
+const LastVisitsTwo: React.FC = () => {
 
     const data: dataType[] = [
         {
-            titel1: "طبق آخرین بازدید هایتان",
-            title2: "خرید نیمه تمام را با این پیشنهادها نهایی کنید",
-            img1: "https://dkstatics-public.digikala.com/digikala-products/70619e891af27f9a915d53010245286b6582054b_1686639473.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            img2: "https://dkstatics-public.digikala.com/digikala-products/cf9dfd47ef1d85ac8d6901a5fc5954be37b441c1_1637077091.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            img3: "https://dkstatics-public.digikala.com/digikala-products/0d6d1daf67ea7cf76f677edde34c585ea5b898e8_1614519794.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            img4: "https://dkstatics-public.digikala.com/digikala-products/3699221.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80"
+            titel1: "ساعت عقربه ای مردانه",
+            title2: "بر اساس بازدیدهای شما",
+            img1: "https://dkstatics-public.digikala.com/digikala-products/ed34ed330b1efaedf070091d5bad2abb486fb276_1693220734.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+            img2: "https://dkstatics-public.digikala.com/digikala-products/ff15ca5445c2b1fb7fa368686b42a79c45c5f9cd_1667298070.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+            img3: "https://dkstatics-public.digikala.com/digikala-products/eb21f8ef000d17ca24e7404ea73d4000a5002e1c_1693221230.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+            img4: "https://dkstatics-public.digikala.com/digikala-products/18f96568882150d84cc4e764bc04f9e61da76010_1693219755.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80"
         },
         {
-            titel1: "کیف و کاور گوشی",
+            titel1: "کیبورد (صفحه کلید)",
             title2: "بر اساس بازدیدهای شما",
-            img1: "https://dkstatics-public.digikala.com/digikala-products/878786a783dcf1748768edaa88242558db542d0a_1677417232.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            img2: "https://dkstatics-public.digikala.com/digikala-products/88a485d8d2883a63d9934b364b4937dfbcbb57a6_1644947100.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            img3: "https://dkstatics-public.digikala.com/digikala-products/2493eebb68e22bd982f15f59c47e2584003b8e2a_1662539027.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            img4: "https://dkstatics-public.digikala.com/digikala-products/2a219a00de515ffcfc5755b55c4b6b8d27506f17_1671259591.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80"
+            img1: "https://dkstatics-public.digikala.com/digikala-products/2c0822714b842a29f671d38c39dd5a9ffa4f1be0_1697374868.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+            img2: "https://dkstatics-public.digikala.com/digikala-products/911fc7719420f2819baadb344669307422ac7dbc_1666039190.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+            img3: "https://dkstatics-public.digikala.com/digikala-products/9a51f6d0a7caf91b728a2f997fa26dcf4923d8cc_1698221603.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+            img4: "https://dkstatics-public.digikala.com/digikala-products/dea0a99f2b0fc865c7063911c4bd22b4979719c7_1691318038.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80"
         },
         {
-            titel1: "سرم و اسپری مو",
+            titel1: "کیس کامپیوتر",
             title2: "بر اساس بازدیدهای شما",
-            img1: "https://dkstatics-public.digikala.com/digikala-products/d95050937324918bab15e480177a70a49540b6f9_1670417309.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            img2: "https://dkstatics-public.digikala.com/digikala-products/3516298.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            img3: "https://dkstatics-public.digikala.com/digikala-products/34795b1ce3b08d1bbe096dc2bb9f6cb3f1136d0d_1606237754.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            img4: "https://dkstatics-public.digikala.com/digikala-products/1c011ef663a9c6c0ff25bce788f85058b81866fd_1668511212.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80"
+            img1: "https://dkstatics-public.digikala.com/digikala-products/97c8c791688cbccd42483aa2bb67f8d31f870edc_1690038434.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+            img2: "https://dkstatics-public.digikala.com/digikala-products/90b621ce7ba8962c9b83ffb4fa4bd4520ebb7658_1662576772.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+            img3: "https://dkstatics-public.digikala.com/digikala-products/afb5a2b6c19602cff32dde0abdc54bfff9baa2bf_1599374562.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+            img4: "https://dkstatics-public.digikala.com/digikala-products/7841ddef0065fde2ddb88edd8757dfc62a10c52e_1689779953.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80"
         },
         {
-            titel1: "شامپو مو",
+            titel1: "قابلمه و تابه",
             title2: "بر اساس بازدیدهای شما",
-            img1: "https://dkstatics-public.digikala.com/digikala-products/b7d0569e1285bd1cf6296eef5466e6ecfbb44a32_1632563062.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            img2: "https://dkstatics-public.digikala.com/digikala-products/4442589.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            img3: "https://dkstatics-public.digikala.com/digikala-products/1268295.png?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            img4: "https://dkstatics-public.digikala.com/digikala-products/e906351ef28b1eacfc4a2b86006234925b8771d0_1699172914.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80"
+            img1: "https://dkstatics-public.digikala.com/digikala-products/25ea216b0188570f5465823696c02e8f5c6950d7_1657628113.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+            img2: "https://dkstatics-public.digikala.com/digikala-products/b61e5ca62ebd7bed5e352c157edd78d233870209_1636266581.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+            img3: "https://dkstatics-public.digikala.com/digikala-products/1b19575e2c8948c9363f8f636649c32ebdf8d3fa_1634119173.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+            img4: "https://dkstatics-public.digikala.com/digikala-products/37a69dcffc2669e2690925806ec133a1a899a880_1706264366.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80"
         }
     ];
 
 
     return (
         <>
-            <section className="last-visits-one-container">
+            <section className="last-visits-two-container">
                 <div className="container mx-auto px-2">
-                    <div className="lg:border rounded-lg flex flex-wrap select-none">
+                    <div className="lg:border rounded-lg flex flex-wrap select-none my-8">
                         <div className="w-full flex flex-wrap">
 
                             {
@@ -101,4 +101,4 @@ const LastVisitsOne: React.FC = () => {
     );
 }
 
-export default LastVisitsOne;
+export default LastVisitsTwo;
