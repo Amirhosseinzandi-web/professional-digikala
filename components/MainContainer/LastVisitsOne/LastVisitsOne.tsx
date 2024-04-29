@@ -52,47 +52,49 @@ const LastVisitsOne: React.FC = () => {
     return (
         <>
             <section className="last-visits-one-container">
-                <div className="container mx-auto px-2">
-                    <div className="lg:border rounded-lg flex flex-wrap select-none">
-                        <div className="w-full flex flex-wrap">
+                <div className="lg:container mx-auto lg:px-2">
+                    <div>
+                        <div className="lg:border rounded-lg flex flex-wrap select-none my-8">
+                            <div className="w-full flex flex-wrap">
 
-                            {
-                                data.map((item, ind) => (
-                                    <section key={ind} className="w-[100%] lg:w-[25%] lg:border-l last-of-type:border-l-0 p-2">
-                                        <div>
-                                            <h2 className="font-semibold text-lg">{item.titel1}</h2>
-                                            <p className="text-xs light-gray-text my-3">{item.title2}</p>
-                                        </div>
-                                        <div className="grid grid-cols-2 w-[88%] mx-auto" style={{ background: "rgb(209 213 219)", gap: "1px" }}>
-                                            <section className="bg-white p-2">
-                                                <figure className="flex justify-center">
-                                                    <Image src={item.img1} width={129.88} height={129.88} alt="picture" className="w-[90%] h-90% lg:w-[129.88px] lg:h-[129.88px] object-contain" />
-                                                </figure>
-                                            </section>
-                                            <section className="bg-white p-2">
-                                                <figure className="flex justify-center">
-                                                    <Image src={item.img2} width={129.88} height={129.88} alt="picture" className="w-[90%] h-90% lg:w-[129.88px] lg:h-[129.88px] object-contain" />
-                                                </figure>
-                                            </section>
-                                            <section className="bg-white p-2">
-                                                <figure className="flex justify-center">
-                                                    <Image src={item.img3} width={129.88} height={129.88} alt="picture" className="w-[90%] h-90% lg:w-[129.88px] lg:h-[129.88px] object-contain" />
-                                                </figure>
-                                            </section>
-                                            <section className="bg-white p-2">
-                                                <figure className="flex justify-center">
-                                                    <Image src={item.img4} width={129.88} height={129.88} alt="picture" className="w-[90%] h-90% lg:w-[129.88px] lg:h-[129.88px] object-contain" />
-                                                </figure>
-                                            </section>
-                                        </div>
-                                        <div className="flex justify-center items-center text-sm mt-3" style={{ color: "var(--lightBlue)" }}>
-                                            <p className="cursor-pointer">مشاهده</p>
-                                            <i className="bi bi-chevron-left text-xs pr-1"></i>
-                                        </div>
-                                    </section>
-                                ))
-                            }
+                                {
+                                    data.map((item, ind) => (
+                                        <section key={ind} className="w-[100%] lg:w-[25%] border-b lg:border-b-0 lg:border-l last-of-type:border-l-0 px-2 py-5">
+                                            <div>
+                                                <h2 className="font-semibold text-lg">{item.titel1}</h2>
+                                                <p className="text-xs light-gray-text my-3">{item.title2}</p>
+                                            </div>
+                                            <div className="grid grid-cols-2 w-[88%] mx-auto" style={{ background: "rgb(209 213 219)", gap: "1px" }}>
+                                                <section className="bg-white p-1 lg:p-1 flex justify-center items-center overflow-hidden">
+                                                    <figure className="flex justify-center w-[96%] h-[96%]">
+                                                        <Image src={item.img1} width={129.88} height={129.88} alt="picture" className="w-[100%] h-100% object-contain" />
+                                                    </figure>
+                                                </section>
+                                                <section className="bg-white p-1 lg:p-1 flex justify-center items-center overflow-hidden">
+                                                    <figure className="flex justify-center w-[96%] h-[96%]">
+                                                        <Image src={item.img2} width={129.88} height={129.88} alt="picture" className="w-[100%] h-100% object-contain" />
+                                                    </figure>
+                                                </section>
+                                                <section className="bg-white p-1 lg:p-1 flex justify-center items-center overflow-hidden">
+                                                    <figure className="flex justify-center w-[96%] h-[96%]">
+                                                        <Image src={item.img3} width={129.88} height={129.88} alt="picture" className="w-[100%] h-100% object-contain" />
+                                                    </figure>
+                                                </section>
+                                                <section className="bg-white p-1 lg:p-1 flex justify-center items-center overflow-hidden">
+                                                    <figure className="flex justify-center w-[96%] h-[96%]">
+                                                        <Image src={item.img4} width={129.88} height={129.88} alt="picture" className="w-[100%] h-100% object-contain" />
+                                                    </figure>
+                                                </section>
+                                            </div>
+                                            <div className="flex justify-center items-center text-sm mt-3" style={{ color: "var(--lightBlue)" }}>
+                                                <p className="cursor-pointer">مشاهده</p>
+                                                <i className="bi bi-chevron-left text-xs pr-1"></i>
+                                            </div>
+                                        </section>
+                                    ))
+                                }
 
+                            </div>
                         </div>
                     </div>
                 </div>

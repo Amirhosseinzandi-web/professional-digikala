@@ -13,6 +13,7 @@ import LastVisitsOne from "./LastVisitsOne/LastVisitsOne";
 import DigiPlus from "./DigiPlus/DigiPlus";
 import Digiclub from "./Digiclub/Digiclub";
 import LastVisitsTwo from "./LastVisitsTwo/LastVisitsTwo";
+import SpecialProducts from "./SpecialProducts/SpecialProducts";
 
 
 
@@ -35,6 +36,7 @@ const MainContainer = () => {
             <DigiPlus />
             <Digiclub />
             <LastVisitsTwo />
+            <SpecialProducts />
         </main>
     );
 }
