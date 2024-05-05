@@ -79,7 +79,7 @@ const DesktopMenuTop: React.FC = () => {
             </div>
             <section className="hidden desktop-menu-top lg:flex container mx-auto py-4 px-2">
                 <div className="flex w-full">
-                    <div className="flex w-[73%]">
+                    <div className="flex w-[44%]">
                         <figure className="flex items-center">
                             <Image src="https://www.digikala.com/statics/img/svg/logo.svg" alt="search" width={145} height={30} />
                         </figure>
