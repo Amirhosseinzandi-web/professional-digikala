@@ -78,21 +78,21 @@ const DesktopMenuTop: React.FC = () => {
                 </figure>
             </div>
             <section className="hidden desktop-menu-top lg:flex container mx-auto py-4 px-2">
-                <div className="flex w-full">
-                    <div className="flex w-[44%]">
+                <div className="flex w-full justify-between">
+                    <div className="flex w-[710px]">
                         <figure className="flex items-center">
                             <Image src="https://www.digikala.com/statics/img/svg/logo.svg" alt="search" width={145} height={30} />
                         </figure>
 
                         <div onClick={searchModalHandlerShow} className="relative mr-4 w-full menu-desktop-searchbar cursor-pointer flex items-center">
-                            <i className="bi bi-search light-gray-text text-base absolute inline-flex bottom-[8px] right-[10px]"></i>
-                            <span className="w-full py-2 pr-14 light-gray-text">جستجو</span>
+                            <i className="bi bi-search light-gray-text text-base absolute inline-flex right-[10px]"></i>
+                            <span className="w-full py-3 pr-12 light-gray-text">جستجو</span>
                             <div style={{ boxShadow: "0px 0px 45px black" }} className={`search-modal  rounded-md ${openSearchModalDesktop ? "search-modal-show" : ""}`}>
                                 <section>
                                     <div>
-                                        <div className="relative">
-                                            <input value={inputVal} maxLength={30} onChange={inputValHandler} id="inp" className="w-full outline-none border border-slate-400 py-2 pr-14" placeholder="جستجو" type="text" />
-                                            <i onClick={searchModalHandlerClose} className="bi bi-search text-black font-bold text-base absolute inline-flex bottom-[8px] right-[10px]"></i>
+                                        <div className="relative flex items-center">
+                                            <input value={inputVal} maxLength={30} onChange={inputValHandler} id="inp" className="w-full outline-none border border-slate-400 py-3 pr-12" placeholder="جستجو" type="text" />
+                                            <i onClick={searchModalHandlerClose} className="bi bi-search text-black font-bold text-base absolute inline-flex right-[10px]"></i>
                                         </div>
                                     </div>
 
