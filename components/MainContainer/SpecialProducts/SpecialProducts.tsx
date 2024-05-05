@@ -148,7 +148,7 @@ const SpecialProducts: React.FC = () => {
         <>
             <section className="special-products-container">
                 <div className="lg:container lg:mx-auto px-2">
-                    <div className="lg:border rounded-lg">
+                    <div className="lg:border rounded-lg select-none">
                         <div className="flex justify-center gap-1 items-center my-9">
                             <figure>
                                 <Image src={"/digikala-special-products.png"} alt="pic" width={25} height={25} />
