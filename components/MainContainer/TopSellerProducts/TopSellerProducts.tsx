@@ -6,125 +6,127 @@ import Image from 'next/image';
 
 
 
+type ProductsType = {
+    src: string
+    alt: string
+    text: string
+    num: string
+}
+
+
 const TopSellerProducts: React.FC = () => {
 
-    type ProductsType = {
-        src: string
-        alt: string
-        text: string
-        num: string
-    }
 
     const products: ProductsType[] = [
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/96b6f0646a5ba3e560c909d495f174d7a2c65ad4_1684070603.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "گوشی موبایل سامسونگ مدل Galaxy A24 4G دو سیم کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت",
-            text: "گوشی موبایل سامسونگ مدل Galaxy A24 4G دو سیم کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت",
-            num: "۱"
+        src: "https://dkstatics-public.digikala.com/digikala-products/2ab1f589cee7b8b62cfc6ca1ed91f9a10cfd496e_1662902252.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "پوشک بچه هانیز سایز 4 بسته 34 عددی",
+        text: "پوشک بچه هانیز سایز 4 بسته 34 عددی",
+        num: "۱"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/b3fc8709835b119e98cf5b9147fe9f8c38934db5_1710170751.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "گوشی موبایل ریلمی مدل Note 50 ظرفیت 128 گیگابایت و رم 4 گیگابایت",
-            text: "گوشی موبایل ریلمی مدل Note 50 ظرفیت 128 گیگابایت و رم 4 گیگابایت",
-            num: "۲"
+        src: "https://dkstatics-public.digikala.com/digikala-products/f55ceeffca5e2bdcc904dd939abc37e36cb0ad82_1657598550.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "اسپاگتی قطر 1.2 زر ماکارون مقدار 700 گرم",
+        text: "اسپاگتی قطر 1.2 زر ماکارون مقدار 700 گرم",
+        num: "۲"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/19f32dc5db336fefe519d25770740c95fc1c358d_1709119546.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "تلویزیون کیو ال ای دی هوشمند جی پلاس مدل GTV-50RQ754N سایز 50 اینچ",
-            text: "تلویزیون کیو ال ای دی هوشمند جی پلاس مدل GTV-50RQ754N سایز 50 اینچ",
-            num: "۳"
+        src: "https://dkstatics-public.digikala.com/digikala-products/96cc6a20198b2985332be1f19ebcf36e3af4d7b7_1699186866.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "روغن سرخ کردنی غنچه - 1.5 لیتر",
+        text: "روغن سرخ کردنی غنچه - 1.5 لیتر",
+        num: "۳"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/7b0419ac1e0211003c658885f947d0c2088ed8b7_1705400381.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "تلویزیون ال ای دی هوشمند نکسار مدل NTV-H43E614N سایز 43 اینچ",
-            text: "تلویزیون ال ای دی هوشمند نکسار مدل NTV-H43E614N سایز 43 اینچ",
-            num: "۴"
+        src: "https://dkstatics-public.digikala.com/digikala-products/121654059.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "پنیر فتا دوشه هراز - 400 گرم",
+        text: "پنیر فتا دوشه هراز - 400 گرم",
+        num: "۴"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/0b7a39cead8f1294c2af6c8f948423359c6fab0e_1662894966.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "کیبورد تسکو مدل TK 8032 با حروف فارسی",
-            text: "کیبورد تسکو مدل TK 8032 با حروف فارسی",
-            num: "۵"
+        src: "https://dkstatics-public.digikala.com/digikala-products/a53a52ac63771ba0dbb13e40b395b5cfbcd37b20_1678654164.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "نوار دستگاه تست قند خون ایزی گلوکو مدل اتوکدینگ بسته 50 عددی",
+        text: "نوار دستگاه تست قند خون ایزی گلوکو مدل اتوکدینگ بسته 50 عددی",
+        num: "۵"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/f6c5aebca9b8df7db87f23049986b395742d7418_1637407846.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "ساعت مچی عقربه ای زنانه لاروس مدل 0417-79244G",
-            text: "ساعت مچی عقربه ای زنانه لاروس مدل 0417-79244G",
-            num: "۶"
+        src: "https://dkstatics-public.digikala.com/digikala-products/25a3509464b031408045c6f657d55b0a4bebaf66_1661075759.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "پوشک بچه هانیز سایز 5 بسته 28 عددی",
+        text: "پوشک بچه هانیز سایز 5 بسته 28 عددی",
+        num: "۶"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/d84e03f2db08940c9b3059331614cea8460cd6e1_1671706620.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "ادکلن مردانه مولکول ویورک مدل شنل بلو د شنل&nbsp;حجم 200 میلی لیتر",
-            text: "ادکلن مردانه مولکول ویورک مدل شنل بلو د شنل&nbsp;حجم 200 میلی لیتر",
-            num: "۷"
+        src: "https://dkstatics-public.digikala.com/digikala-products/ad6854c3ac0aeae551e31d70b0f69ac651fa9c19_1653729496.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "روغن آفتابگردان حاوی توکوفرول غنچه پلاس - 1800 میلی لیتر",
+        text: "روغن آفتابگردان حاوی توکوفرول غنچه پلاس - 1800 میلی لیتر",
+        num: "۷"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/f426c35d5239faf0828e5ad22591e875507687ca_1704705889.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "هندزفری بلوتوثی تی سی اچ مدل TCH S33 ENC+ANC",
-            text: "هندزفری بلوتوثی تی سی اچ مدل TCH S33 ENC+ANC",
-            num: "۸"
+        src: "https://dkstatics-public.digikala.com/digikala-products/2dba4180216c3deeff3655329e7fd1efd1390379_1659528467.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "لازانیا پیش پخت زر ماکارون - 500 گرم",
+        text: "لازانیا پیش پخت زر ماکارون - 500 گرم",
+        num: "۸"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/efc2087b5c550a65adf9f00170a5166bc3ddc70c_1704529153.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "گوشی موبایل موتورولا مدل Moto G54 5G دو سیم کارت ظرفیت 256 گیگابایت و رم 12 گیگابایت",
-            text: "گوشی موبایل موتورولا مدل Moto G54 5G دو سیم کارت ظرفیت 256 گیگابایت و رم 12 گیگابایت",
-            num: "۹"
+        src: "https://dkstatics-public.digikala.com/digikala-products/bb63c85bbd4d7781ad2b4513e1f52dce7e7ced6c_1618813597.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "کاغذ A4 کپی مکس کد 020 بسته 500 عددی",
+        text: "کاغذ A4 کپی مکس کد 020 بسته 500 عددی",
+        num: "۹"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/f992b92035d756f767b0ec1173d6dcc4c8c8afbf_1706622456.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "کاپوچینو جاموکا - 25 گرم بسته 10 عددی",
-            text: "کاپوچینو جاموکا - 25 گرم بسته 10 عددی",
-            num: "۱۰"
+        src: "https://dkstatics-public.digikala.com/digikala-products/c5636babe93250ee8d32c9748da8732018af70ee_1609577970.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "پوشک کودک مولفیکس سایز 4 بسته 34 عددی",
+        text: "پوشک کودک مولفیکس سایز 4 بسته 34 عددی",
+        num: "۱۰"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/23cfb01bca1d70200799e996bedab6c4464154f6_1689939804.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "  لوستر ام کی ای لایتینگ مدل مدرن کد Ringo-w60",
-            text: "  لوستر ام کی ای لایتینگ مدل مدرن کد Ringo-w60",
-            num: "۱۱"
+        src: "https://dkstatics-public.digikala.com/digikala-products/bc78de1c0210a5f9ce752f82de851fc7bf7cd01c_1709533747.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "بیسکویت گندم کامل ساقه طلایی مینو - 200 گرم",
+        text: "بیسکویت گندم کامل ساقه طلایی مینو - 200 گرم",
+        num: "۱۱"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/d124db6ef7cc8307041c4329a3ca24ba45c3e22d_1631347575.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "اسپیکر بلوتوثی تسکو مدل TS 2316",
-            text: "اسپیکر بلوتوثی تسکو مدل TS 2316",
-            num: "۱۲"
+        src: "https://dkstatics-public.digikala.com/digikala-products/15f73330a521a53118766d8945eaf17f2cb17bf7_1627818065.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "پوشک کودک مولفیکس سایز 6 بسته 24 عددی",
+        text: "پوشک کودک مولفیکس سایز 6 بسته 24 عددی",
+        num: "۱۲"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/3c7df5b965fc821b902ea7b9b11f3d3ad1089616_1639385048.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: " سرویس پذیرایی 6 پارچه گلاسکو مدل نوبلیس",
-            text: " سرویس پذیرایی 6 پارچه گلاسکو مدل نوبلیس",
-            num: "۱۳"
+        src: "https://dkstatics-public.digikala.com/digikala-products/5d4956cf75c3113bb0fe079e2f691017ee99592d_1659790166.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "لوبیا قرمز همدل - 900 گرم",
+        text: "لوبیا قرمز همدل - 900 گرم",
+        num: "۱۳"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/b5940c8b1d600409cbff2a8f875df339d7c50d9b_1702212312.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "لامپ 8 وات اس ام دی سایروکس مدل حبابی پایه E27 بسته دو عددی",
-            text: "لامپ 8 وات اس ام دی سایروکس مدل حبابی پایه E27 بسته دو عددی",
-            num: "۱۴"
+        src: "https://dkstatics-public.digikala.com/digikala-products/5c110a918e2fc216a61ab81c356a7c0bc89d1352_1700314936.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "پودر رختشویی دستی سافتلن مقدار 500 گرم",
+        text: "پودر رختشویی دستی سافتلن مقدار 500 گرم",
+        num: "۱۴"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/8ab5d0be76b7199273edda7ff19b8763e0d52be8_1656756871.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "گاز کولر انتخاب سرویس مدل R134a وزن 13.6 کیلوگرم",
-            text: "گاز کولر انتخاب سرویس مدل R134a وزن 13.6 کیلوگرم",
-            num: "۱۵"
+        src: "https://dkstatics-public.digikala.com/digikala-products/dc1940616b8f53ffc260310173d5a28bdb01d118_1657707012.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "مايع ظرفشويی پريل مدل ليمويی وزن  1000 گرم",
+        text: "مايع ظرفشويی پريل مدل ليمويی وزن  1000 گرم",
+        num: "۱۵"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/f3677da58ff79f4456c99964ec2ba6cbc3ae3571_1690889279.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "کوله پشتی فوروارد کد 6006blk به همراه جامدادی",
-            text: "کوله پشتی فوروارد کد 6006blk به همراه جامدادی",
-            num: "۱۶"
+        src: "https://dkstatics-public.digikala.com/digikala-products/875e77a2d2449c861f4a9a2431af39c995f5dacc_1621058916.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "مایع لباسشویی جنرال اکتیو مدل سبز حجم  2500 میلی لیتر",
+        text: "مایع لباسشویی جنرال اکتیو مدل سبز حجم  2500 میلی لیتر",
+        num: "۱۶"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/435928a7029e82616749de456d5782b15866097a_1710187514.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "کافی میکس 3 در 1 جاموکا - 18 گرم بسته 16 عددی",
-            text: "کافی میکس 3 در 1 جاموکا - 18 گرم بسته 16 عددی",
-            num: "۱۷"
+        src: "https://dkstatics-public.digikala.com/digikala-products/2113921.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "کاغذ A4 کپی مکس بسته 500 عددی",
+        text: "کاغذ A4 کپی مکس بسته 500 عددی",
+        num: "۱۷"
         },
         {
-            src: "https://dkstatics-public.digikala.com/digikala-products/f3cd0885d85c79b0565aada301ac9f552236963b_1667618237.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
-            alt: "لامپ هوشمند ال ای دی داشبورد خودرو آی لد مدل DB1033",
-            text: "لامپ هوشمند ال ای دی داشبورد خودرو آی لد مدل DB1033",
-            num: "۱۸"
+        src: "https://dkstatics-public.digikala.com/digikala-products/b077b7e2b1abbb32b8703e8b75d4f7a9a6d0827f_1653732511.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80",
+        alt: "روغن کانولا غنچه - 900 میلی لیتر",
+        text: "روغن کانولا غنچه - 900 میلی لیتر",
+        num: "۱۸"
         }
-    ];
+        ];
 
 
     return (
@@ -134,7 +136,7 @@ const TopSellerProducts: React.FC = () => {
                     <div className='mb-9 mt-2 flex p-2 items-center'>
                         <div className='w-[50%] lg:w-[54%] flex justify-start lg:justify-end items-end gap-1'>
                             <figure>
-                                <Image src="/top-seller.png" alt='top-sellers' width={20} height={20}/>
+                                <Image src="/top-seller.png" alt='top-sellers' width={20} height={20} />
                             </figure>
                             <p className='text-center text-xl font-medium'>پرفروش‌ترین کالاها</p>
                         </div>
