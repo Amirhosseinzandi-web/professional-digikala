@@ -14,6 +14,7 @@ import DigiPlus from "./DigiPlus/DigiPlus";
 import Digiclub from "./Digiclub/Digiclub";
 import LastVisitsTwo from "./LastVisitsTwo/LastVisitsTwo";
 import SpecialProducts from "./SpecialProducts/SpecialProducts";
+import TopSellerProducts from "./TopSellerProducts/TopSellerProducts";
 
 
 
@@ -35,6 +36,7 @@ const MainContainer = () => {
             <LastVisitsOne />
             <DigiPlus />
             <Digiclub />
+            <TopSellerProducts />
             <LastVisitsTwo />
             <SpecialProducts />
         </main>

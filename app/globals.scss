@@ -14,9 +14,9 @@
     --green: #39ae00;
     --bluePurpleColor: #987eff85;
     --similarToBlack: #3f4064;
-    --loadingBg : #EBEBEB;
-    --gold : #F9BC00;
-    --purple : #941b80;
+    --loadingBg: #EBEBEB;
+    --gold: #F9BC00;
+    --purple: #941b80;
 }
 
 @font-face {
@@ -118,5 +118,11 @@
     width: 0px !important;
 }
 
+.ellipse2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 @import "../styles/Master.scss";

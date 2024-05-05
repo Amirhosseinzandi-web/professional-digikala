@@ -51,10 +51,10 @@ const LastVisitsTwo: React.FC = () => {
 
     return (
         <>
-            <section className="last-visits-two-container">
+            <section className="last-visits-two-container my-8">
                 <div className="lg:container mx-auto lg:px-2">
                     <div>
-                        <div className="lg:border rounded-lg flex flex-wrap select-none my-8">
+                        <div className="lg:border rounded-lg flex flex-wrap select-none">
                             <div className="w-full flex flex-wrap">
 
                                 {
