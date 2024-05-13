@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation } from 'swiper/modules';
 import "./HottestLastFewHoursSlider.css"
 import Image from 'next/image';
+import BoxTitle from '@/components/Modules/BoxTitle/BoxTitle';
 
 
 
@@ -129,16 +130,11 @@ const HottestLastFewHours = () => {
     return (
         <section className="hottest-last-few-hours my-8">
             <div className="lg:container lg:mx-auto lg:px-2">
-                <div className='border rounded-lg px-1 py-3 select-none'>
+                <div className='border rounded-lg px-1 py-3'>
                     <div className='mb-9 mt-2 flex p-2 items-center justify-center'>
-                        <div className='flex items-end gap-1'>
-                            <figure>
-                                <Image src="/top-seller.png" alt='top-sellers' width={20} height={20} />
-                            </figure>
-                            <p className='text-center text-xl font-medium'>داغ ترین چند ساعت گذشته</p>
-                        </div>
+                        <BoxTitle showImg={true} src='/top-seller.png' alt='top-sellers' title='داغ ترین چند ساعت گذشته' mx="mx-auto" />
                     </div>
-                    <div>
+                    <div className='select-none'>
                         <Swiper
                             slidesPerView={"auto"}
                             spaceBetween={0}

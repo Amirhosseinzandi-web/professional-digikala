@@ -4,6 +4,7 @@ import "./PopularBrandsSlider.css"
 import Image from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation } from 'swiper/modules';
+import BoxTitle from "@/components/Modules/BoxTitle/BoxTitle";
 // import LoadingPic from "../../../../public/loading.gif"
 
 
@@ -88,9 +89,7 @@ const PopularBrands: React.FC = () => {
                         <div className="mt-6">
                             <div className="flex justify-center items-center">
                                 <i style={{ color: "var(--gold)" }} className="bi bi-star-half inline-flex ml-2 text-xl"></i>
-                                <h2 className="text-xl font-medium">
-                                    محبوب ترین برندها
-                                </h2>
+                                <BoxTitle showImg={false} title="محبوب ترین برندها"/>
                             </div>
                         </div>
 

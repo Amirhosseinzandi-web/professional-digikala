@@ -1,5 +1,6 @@
 import Image from "next/image";
 import "./responsive.scss"
+import BoxTitle from "@/components/Modules/BoxTitle/BoxTitle";
 
 
 
@@ -148,14 +149,9 @@ const SpecialProducts: React.FC = () => {
         <>
             <section className="special-products-container">
                 <div className="lg:container lg:mx-auto px-2">
-                    <div className="lg:border rounded-lg select-none">
-                        <div className="flex justify-center gap-1 items-center my-9">
-                            <figure>
-                                <Image src={"/digikala-special-products.png"} alt="pic" width={25} height={25} />
-                            </figure>
-                            <p className="font-bold text-lg">منتخب محصولات تخفیف و حراج</p>
-                        </div>
-                        <div className="special-products grid grid-cols-2 lg:grid-cols-5 xl:grid-cols-6">
+                    <div className="lg:border rounded-lg select-none py-9">
+                        <BoxTitle showImg={true} title="منتخب محصولات تخفیف و حراج" src="/digikala-special-products.png" alt="pic"  mx="mx-auto"/>
+                        <div className="special-products grid grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 mt-9">
 
                             {
                                 data?.map((item, i) => (

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation } from 'swiper/modules';
 import LoadingPic from "../../../../public/loading.gif"
 import "./DigikalaOfferSlider.css"
+import BoxTitle from "@/components/Modules/BoxTitle/BoxTitle";
 
 type moreCategoriesType = {
     firstSrc: string
@@ -67,9 +68,7 @@ const DigikalaOffer: React.FC = () => {
             <section className="digikala-offer-container">
                 <div className="container mx-auto px-2">
                     <div>
-                        <h2 className="text-xl font-medium text-center">
-                            پیشنهاد دیجی‌کالا
-                        </h2>
+                        <BoxTitle showImg={false} title="پیشنهاد دیجی‌کالا" mx="mx-auto"/>
                     </div>
 
                     <div className="flex flex-wrap mt-3 justify-around gap-5 border border-gray-300 rounded-lg overflow-hidden">

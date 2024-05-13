@@ -1,3 +1,4 @@
+import BoxTitle from "@/components/Modules/BoxTitle/BoxTitle";
 import Image from "next/image";
 
 
@@ -65,9 +66,7 @@ const ShopByCategory = () => {
         <section className="shop-by-category-container">
             <div className="container mx-auto px-2">
                 <div>
-                    <h2 className="text-xl font-medium text-center">
-                        خرید بر اساس دسته بندی
-                    </h2>
+                    <BoxTitle showImg={false} title="خرید بر اساس دسته بندی" mx="mx-auto"/>
                 </div>
 
                 <div className="mt-3 flex flex-wrap justify-center gap-4">
