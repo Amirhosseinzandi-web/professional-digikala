@@ -25,6 +25,10 @@
     font-display: swap
 }
 
+html{
+    overflow-y: hidden;
+}
+
 .lttr {
     direction: ltr;
 }
