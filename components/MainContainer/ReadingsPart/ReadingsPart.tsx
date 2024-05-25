@@ -36,7 +36,7 @@ const ReadingsPart = () => {
     return (
         <section className="readings-part">
             <div className="lg:container lg:mx-auto px-2">
-                <div className="px-5 py-3">
+                <div className="px-3 lg:px-5 py-3">
                     <div className="flex justify-between my-3">
                         <p className="font-medium">خواندنی</p>
                         <div className="flex items-center gap-1">
