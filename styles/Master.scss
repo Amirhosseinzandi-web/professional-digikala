@@ -1,15 +1,21 @@
 body {
     direction: rtl;
+    --sb-track-color: #f1f1f1;
+    --sb-thumb-color: #a9a9a9b3;
+    --sb-size: 9px;
 
     &::-webkit-scrollbar {
-        background-color: var(--lightGrayBg);
-        width: 10px;
-        border-radius: 8px;
+        width: var(--sb-size);
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--sb-track-color);
+        border-radius: 1px;
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: var(--bluePurpleColor);
-        border-radius: 8px;
+        background: var(--sb-thumb-color);
+        border-radius: 1px;
     }
 
     >header {
