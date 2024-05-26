@@ -8,7 +8,8 @@ const initialState: DataListArrayType = {
     DataList: [],
     errorStatus: false,
     loadingHandler: true,
-    openSearchModalDesktop: false
+    openSearchModalDesktop: false ,
+    showMegaMenuZustand : false
 }
 
 
@@ -43,6 +44,14 @@ const useDataStore = create<DataStoreType>((set) => ({
             return {
                 ...state,
                 openSearchModalDesktop: newRecord
+            }
+        })
+    } ,
+    setShowMegaMenuZustandHandler : (newRecord) =>{
+        set(state =>{
+            return{
+                ...state , 
+                showMegaMenuZustand : newRecord
             }
         })
     }

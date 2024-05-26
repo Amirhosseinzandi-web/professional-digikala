@@ -2,6 +2,7 @@
 
 import { memo, useEffect, useState } from "react";
 import MegaMenuContainer from "./MegaMenuContainer";
+import useDataStore from "../../Store/CreateSlice"
 
 
 
@@ -12,6 +13,7 @@ const DesktopMenuBottom: React.FC = () => {
     const [isInNav, setIsInNav] = useState(false);
     const [isInLi, setIsInLi] = useState(false);
     const [componentIsReady, setComponentIsReady] = useState(false);
+    const { showMegaMenuZustand, setShowMegaMenuZustandHandler } = useDataStore(state => state)
 
 
     const MenuHandler = (e: React.MouseEvent) => {
@@ -51,21 +53,17 @@ const DesktopMenuBottom: React.FC = () => {
                 redLine.style.width = `0px`;
             }
 
-
             setTimeout(() => {
                 redLine.style.transform = `translateX(${_distance}px)`;
                 redLine.style.width = `${_width}px`;
             }, _time);
 
-
         }
 
-    
 
         const mouseLeaveHandler = (e: MouseEvent) => {
             setIsInLi(false)
         }
-
 
 
         const navItems = document.querySelectorAll(".nav .nav__items") as NodeListOf<HTMLElement>;
@@ -75,9 +73,11 @@ const DesktopMenuBottom: React.FC = () => {
         })
 
 
-
         if (showMegaMenu) {
             setIsInLi(true);
+            document.documentElement.style.overflowY = "hidden";
+        } else {
+            document.documentElement.style.overflowY = "unset";
         }
 
 
@@ -93,12 +93,21 @@ const DesktopMenuBottom: React.FC = () => {
         }
 
 
+        const wheelHandler = () => {
+            setShowMegaMenu(false)
+        }
+
+        window.addEventListener("wheel", wheelHandler)
+
+
+        setShowMegaMenuZustandHandler(showMegaMenu)
 
         return () => {
             navItems.forEach((el) => {
                 (el as HTMLElement).removeEventListener("mousemove", mouseEnterHandler);
                 (el as HTMLElement).removeEventListener("mouseleave", mouseLeaveHandler);
             })
+            window.removeEventListener("wheel", wheelHandler)
         }
 
     }, [showMegaMenu, isInNav, isInLi, componentIsReady])

@@ -19,6 +19,7 @@ export type DataListArrayType = {
     errorStatus: boolean
     loadingHandler: boolean
     openSearchModalDesktop: boolean
+    showMegaMenuZustand : boolean
 }
 
 
@@ -31,4 +32,6 @@ export type DataStoreType = {
     openSearchModalDesktop: boolean
     setDataList: (newRecord: ItemsType[]) => void
     setModalSearch: (newRecord: boolean) => void
+    showMegaMenuZustand : boolean
+    setShowMegaMenuZustandHandler : (newRecord: boolean) => void
 }
