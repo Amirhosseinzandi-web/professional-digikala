@@ -60,7 +60,7 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
 
         const HandleScroll = () => {
             setNewVal(document.documentElement.scrollTop);
-            setShowMegaMenu(false)
+            // setShowMegaMenu(false)
         }
 
         window.addEventListener("scroll", HandleScroll)

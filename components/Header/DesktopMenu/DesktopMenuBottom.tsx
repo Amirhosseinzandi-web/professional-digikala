@@ -93,11 +93,11 @@ const DesktopMenuBottom: React.FC = () => {
         }
 
 
-        const wheelHandler = () => {
-            setShowMegaMenu(false)
-        }
+        // const wheelHandler = () => {
+        //     setShowMegaMenu(false)
+        // }
 
-        window.addEventListener("wheel", wheelHandler)
+        // window.addEventListener("wheel", wheelHandler)
 
 
         setShowMegaMenuZustandHandler(showMegaMenu)
@@ -107,7 +107,7 @@ const DesktopMenuBottom: React.FC = () => {
                 (el as HTMLElement).removeEventListener("mousemove", mouseEnterHandler);
                 (el as HTMLElement).removeEventListener("mouseleave", mouseLeaveHandler);
             })
-            window.removeEventListener("wheel", wheelHandler)
+            // window.removeEventListener("wheel", wheelHandler)
         }
 
     }, [showMegaMenu, isInNav, isInLi, componentIsReady])
