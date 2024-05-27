@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 
 const HeaderContainer: React.FC = () => {
-    const [currentScrollBarWidth , setCurrentScrollBarWidth] = useState(0)
+    const [currentScrollBarWidth , setCurrentScrollBarWidth] = useState<number>(0)
 
     const { showMegaMenuZustand } = useDataStore(state => state)
 
@@ -27,7 +27,7 @@ const HeaderContainer: React.FC = () => {
                 </figure>
             </div>
             <header className="sticky top-0 left-0 w-full bg-white lg:fixed z-[100] lg:flex" style={{ boxShadow: "0 0 45px rgba(0,0,0,.55)" }}>
-                <span className={`w-[${currentScrollBarWidth}px] ${showMegaMenuZustand ? "block" : "hidden"}`}></span>
+                <span className={`pointer-events-none w-[${currentScrollBarWidth}px] ${showMegaMenuZustand ? "block" : "hidden"}`}></span>
                 <MobileMenu />
                 <DesktopMenuContainer />
             </header>
