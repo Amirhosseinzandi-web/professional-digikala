@@ -27,7 +27,7 @@ const HeaderContainer: React.FC = () => {
                 </figure>
             </div>
             <header className="sticky top-0 left-0 w-full bg-white lg:fixed z-[100] lg:flex" style={{ boxShadow: "0 0 45px rgba(0,0,0,.55)" }}>
-                <span className={`pointer-events-none w-[${currentScrollBarWidth}px] ${showMegaMenuZustand ? "block" : "hidden"}`}></span>
+                <div className={`pointer-events-none w-[${currentScrollBarWidth}px] ${showMegaMenuZustand ? "block" : "hidden"}`}></div>
                 <MobileMenu />
                 <DesktopMenuContainer />
             </header>
