@@ -8,14 +8,16 @@ import { useEffect, useState } from "react";
 
 
 const HeaderContainer: React.FC = () => {
-    const [currentScrollBarWidth , setCurrentScrollBarWidth] = useState<number>(0)
+    const [currentScrollBarWidth, setCurrentScrollBarWidth] = useState<number>(0)
 
     const { showMegaMenuZustand } = useDataStore(state => state)
 
     useEffect(() => {
         const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-        setCurrentScrollBarWidth(scrollBarWidth);
-        
+        if (scrollBarWidth > 0) {
+            setCurrentScrollBarWidth(scrollBarWidth);
+        }
+
     }, [])
 
 
