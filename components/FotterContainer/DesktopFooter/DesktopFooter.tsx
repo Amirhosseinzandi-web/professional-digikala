@@ -98,17 +98,19 @@ const DesktopFooter = () => {
                     <div className="flex my-12">
 
                         {
-                            menuDatas.map((item, ind) => (
-                                <div className="flex-grow flex flex-col gap-5">
-                                    <h2 className="font-medium">{item.mainTitle}</h2>
-                                    {
-                                        item.secondaryTitles.map((elem, index) => (
-                                            <React.Fragment key={index}>
-                                                <p className="text-[14px] text-stone-500">{elem.title}</p>
-                                            </React.Fragment>
-                                        ))
-                                    }
-                                </div>
+                            menuDatas.map((item, firInd) => (
+                                <React.Fragment key={firInd}>
+                                    <div className="flex-grow flex flex-col gap-5">
+                                        <h2 className="font-medium">{item.mainTitle}</h2>
+                                        {
+                                            item.secondaryTitles.map((elem, secInd) => (
+                                                <React.Fragment key={secInd}>
+                                                    <p className="text-[14px] text-stone-500">{elem.title}</p>
+                                                </React.Fragment>
+                                            ))
+                                        }
+                                    </div>
+                                </React.Fragment>
                             ))
                         }
 
@@ -234,7 +236,7 @@ const DesktopFooter = () => {
                 </div>
 
             </section>
-           
+
         </>
     );
 }
