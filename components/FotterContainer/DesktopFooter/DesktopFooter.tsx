@@ -206,26 +206,26 @@ const DesktopFooter = () => {
                 </div>
 
                 <div className="bg-[#f0f0f1]">
-                    <div className="container mx-auto">
+                    <div className="container mx-auto overflow-hidden">
 
                         <div className="grid grid-cols-8">
                             {
                                 businessPartners[0].items?.slice(0, 8).map((i, index) => (
                                     <div key={index} className="h-[80px] border-l-2 border-b-2 flex justify-center items-center last:border-l-0">
                                         <figure>
-                                            <Image width={600} height={600} src={i.imageUrl} alt={i.alt} className="max-w-[160px] h-[20px]" />
+                                            <Image width={600} height={600} src={i.imageUrl} alt={i.alt} className="max-w-[110px] xl:max-w-[150px] h-[20px]" />
                                         </figure>
                                     </div>
                                 ))
                             }
                         </div>
 
-                        <div className="grid grid-cols-7">
+                        <div className="grid grid-cols-6">
                             {
                                 businessPartners[0].items?.slice(9, 15).map((i, index) => (
-                                    <div key={index} className="h-[80px] border-l-2 border-b-2 flex justify-center items-center">
+                                    <div key={index} className="h-[80px] border-l-2 border-b-2 flex justify-center items-center last:border-l-0">
                                         <figure>
-                                            <Image width={600} height={600} src={i.imageUrl} alt={i.alt} className="max-w-[160px] h-[20px]" />
+                                            <Image width={600} height={600} src={i.imageUrl} alt={i.alt} className="max-w-[110px] xl:max-w-[150px] h-[20px]" />
                                         </figure>
                                     </div>
                                 ))
