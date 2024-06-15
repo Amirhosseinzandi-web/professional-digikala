@@ -12,7 +12,7 @@ type propsType = {
 const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu }) => {
     const [prevVal, setPrevVal] = useState(0)
     const [newVal, setNewVal] = useState(0)
-    const { setModalSearch, openSearchModalDesktop } = useDataStore(state => state)
+    const { setModalSearch, openSearchModalDesktop, showMegaMenuZustand } = useDataStore(state => state)
 
     useEffect(() => {
         document.querySelector(".mega-menu-nav-container .mega-menu-nav-items:nth-of-type(1)")?.classList.add("active-menu");
@@ -79,20 +79,22 @@ const MegaMenuContainer: React.FC<propsType> = ({ showMegaMenu, setShowMegaMenu 
         setPrevVal(newVal);
 
 
-        if (newVal > 550) {
+        if (showMegaMenuZustand === false) {
+            if (newVal > 550) {
 
-            if (prevVal < newVal) {
-                setTimeout(() => {
-                    _nav.classList.add("nav--reduce-height")
-                    _nav.classList.remove("nav--border-top")
-                }, 200)
-            } else {
-                setTimeout(() => {
-                    _nav.classList.remove("nav--reduce-height")
-                    _nav.classList.add("nav--border-top")
-                }, 200)
+                if (prevVal < newVal) {
+                    setTimeout(() => {
+                        _nav.classList.add("nav--reduce-height")
+                        _nav.classList.remove("nav--border-top")
+                    }, 200)
+                } else {
+                    setTimeout(() => {
+                        _nav.classList.remove("nav--reduce-height")
+                        _nav.classList.add("nav--border-top")
+                    }, 200)
+                }
+
             }
-
         }
 
         // ***************************************************************
